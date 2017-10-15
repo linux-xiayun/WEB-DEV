@@ -19,12 +19,18 @@ from WTC import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.index),
+    url(r'^$', views.login),
+    url(r'^login$', views.login),
+    url(r'^index$', views.index),
     url(r'^add/', views.add, name='add'),
     url(r'^add/(\d+)/(\d+)', views.c2, name='c2'),
     url(r'WTC/', views.home, name='WTC'),
     url(r'include_name/', views.include_xiay, name='name'),
     url(r'^add_2/', views.add_int, name='add_2'),
+    url(r'^asset/list/page=(\d+)$', views.assetList, name="asset_list"),
+    url(r'^asset/add$', views.addAsset, name="asset_add"),
+    url(r'^asset/edit$', views.editHostAsset, name="asset_edit"),
+    url(r'^asset/action$', views.assetAction, name="asset_action"),
 
 ]
 

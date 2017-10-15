@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../DevOps/.idea/DevOps.iml" filepath="$PROJECT_DIR$/../../DevOps/.idea/DevOps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Gog.iml" filepath="$PROJECT_DIR$/.idea/Gog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../bmh_msgsystem/.idea/bmh_msgsystem.iml" filepath="$PROJECT_DIR$/../../bmh_msgsystem/.idea/bmh_msgsystem.iml" />
+    </modules>
+  </component>
+</project>

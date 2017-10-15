@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = (
-    'grappelli',
+#    'grappelli',
     
     'django.contrib.admin',
     'django.contrib.auth',
@@ -59,7 +59,9 @@ ROOT_URLCONF = 'Gog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+        os.path.join(BASE_DIR,'templates').replace('\\', '/'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -80,8 +82,14 @@ WSGI_APPLICATION = 'Gog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'devops_test',
+        'USER': 'devops',
+        'PASSWORD': 'devops',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
 
@@ -99,12 +107,17 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+APPEND_SLASH=False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 STATIC_URL = '/static/' 
 ADMIN_MEDIA_PREFIX = STATIC_URL + "grappelli/"
-STATIC_ROOT=BASE_DIR+'/static/'
+STATIC_ROOT = os.path.join(BASE_DIR,'statics/')
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR,'static/'),
+)
+MEDIA_URL = '/upload/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'upload')
 
 LOGGING = {
     'version': 1,
@@ -119,5 +132,5 @@ LOGGING = {
             'handlers': ['console'],
             'level': 'DEBUG' if DEBUG else 'INFO',
         },
-    },
+    }
 }
