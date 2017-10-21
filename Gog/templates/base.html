@@ -52,15 +52,18 @@
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
       <!--sidebar start-->
+
       <aside>
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
               	  <p class="centered"><a href="/index"><img src="{% static 'img/cat_man.jpg' %}" class="img-circle" width="60"></a></p>
-              	  <h5 class="centered">xiayun</h5>
+
+                  <h5 class="centered"><a href="/base">{{ username }}</a><h5>
+
                   <li class="mt">
-                      <a {% block active %}{% endblock %} href="/index">
+                      <a {% block active %}{% endblock %} href="/update">
                           <i class="fa fa-dashboard"></i>
                           <span>更新站点</span>
                       </a>

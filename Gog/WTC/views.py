@@ -30,8 +30,11 @@ def index_2(request):
     return HttpResponse("欢迎光临！welcome！%s" % IPaddr)
 
 @login_required(login_url='login')
-def index(request):
+def base(request):
+    username = request.COOKIES.get('username','')
+    return render_to_response('base.html', {'username':username})
 
+def update(request):
     return render_to_response('index.html')
 
 def add(request):
@@ -78,7 +81,9 @@ def login(request):
         user = auth.authenticate(username=username, password=password)
         if user is not None:
             auth.login(request, user)
-            return HttpResponseRedirect('index')
+            response = HttpResponseRedirect('base')
+            response.set_cookie('username', username, 3600)
+            return response
         else:
             error = "用户名或密码错误，请重新输入。"
             return render_to_response("login.html",{'error':error},RequestContext(request))
@@ -86,8 +91,9 @@ def login(request):
 # @login_required  #只有用户在登录的情况下才能调用该视图，否则将自动重定向至登录页面。
 def logout(request):
     auth.logout(request)
-    return HttpResponseRedirect('login')
-
+    response = HttpResponseRedirect('login')
+    response.delete_cookie('username')
+    return response
 
 @login_required()
 def assetList(request, page):
