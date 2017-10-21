@@ -35,7 +35,8 @@ def base(request):
     return render_to_response('base.html', {'username':username})
 
 def update(request):
-    return render_to_response('index.html')
+    username = request.COOKIES.get('username', '')
+    return render_to_response('index.html',{'username':username})
 
 def add(request):
     a = request.GET.get('a', 0)
@@ -82,7 +83,7 @@ def login(request):
         if user is not None:
             auth.login(request, user)
             response = HttpResponseRedirect('base')
-            response.set_cookie('username', username, 3600)
+            response.set_cookie('username', username)
             return response
         else:
             error = "用户名或密码错误，请重新输入。"
@@ -237,7 +238,8 @@ def delHostAsset(request, id):
 # 按钮操作
 def assetAction(request):
     if request.method == "GET":
-        return HttpResponseRedirect('/asset/list/page=1')
+        #return HttpResponseRedirect('/asset/list/page=1')
+        return HttpResponseRedirect('/base')
     if request.method == "POST":
         # 点击哪个按钮就会传过来那个值。另外调用函数时不用写render，在调用的函数里面写或window.location.href
         for key in request.POST:

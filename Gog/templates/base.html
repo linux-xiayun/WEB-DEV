@@ -39,7 +39,7 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="显示/隐藏导航栏"></div>
               </div>
             <!--logo start-->
-            <a href="/index" class="logo"><b>CMDB--运维管理平台</b></a>
+            <a href="/base" class="logo"><b>CMDB--运维管理平台</b></a>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
                     <li><a class="logout" href="/login">Logout</a></li>
@@ -58,13 +58,13 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="/index"><img src="{% static 'img/cat_man.jpg' %}" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="/base"><img src="{% static 'img/cat_man.jpg' %}" class="img-circle" width="60"></a></p>
 
-                  <h5 class="centered"><a href="/base">{{ username }}</a><h5>
+                  <h5 class="centered">{{ username }}<h5>
 
                   <li class="mt">
                       <a {% block active %}{% endblock %} href="/update">
-                          <i class="fa fa-dashboard"></i>
+                          <i class="fa fa-tasks"></i>
                           <span>更新站点</span>
                       </a>
                   </li>
@@ -75,7 +75,7 @@
                           <span>资产管理</span>
                       </a>
                       <ul class="sub">
-                          <li {% block active_1_1 %}{% endblock %}><a href="/asset/list/page=1">资产列表</a></li>
+                          <li {% block active_1_1 %}{% endblock %}><!--a href="/asset/list/page=1"--><a href="/base"> 资产列表</a></li>
                       </ul>
                   </li>
 
