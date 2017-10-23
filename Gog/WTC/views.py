@@ -38,6 +38,14 @@ def update(request):
     username = request.COOKIES.get('username', '')
     return render_to_response('index.html',{'username':username})
 
+def windows_upd(request):
+    username = request.COOKIES.get('username', '')
+    return render_to_response('update/windows.html',{'username':username})
+
+def linux_upd(request):
+    username = request.COOKIES.get('username', '')
+    return render_to_response('update/linux.html',{'username':username})
+
 def add(request):
     a = request.GET.get('a', 0)
     b = request.GET.get('b', 0)
