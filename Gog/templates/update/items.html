@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+<title>{% block title %}Linux更新{% endblock %}</title>
+
+{% block active %} class="active" {% endblock %}
+
+{% block content %}
+    <style>
+        #btn {
+            margin: 5px;
+            border-radius: 5px;
+            color: white;
+            border: none;
+            padding: 5px 6px;
+            float: right;
+        }
+        #box-title {
+            font-size: 15px;
+            font-weight: bold;
+        }
+        #box-content {
+            height: 120px;
+            padding: 5px 6px;
+            border-top: 1px solid #e7eaec;
+        }
+        .box-content h3 {
+            color: #428bca
+        }
+
+.tabtop13 {
+	margin-top: 13px;
+}
+.tabtop13 td{
+	background-color:#ffffff;
+	height:25px;
+	line-height:150%;
+}
+.font-center{ text-align:center}
+.btbg{background:#e9faff !important;}
+.btbg1{background:#f2fbfe !important;}
+.btbg2{background:#f3f3f3 !important;}
+.biaoti{
+	font-family: 微软雅黑;
+	font-size: 26px;
+	font-weight: bold;
+	border-bottom:1px dashed #CCCCCC;
+	color: #255e95;
+}
+.titfont {
+
+	font-family: 微软雅黑;
+	font-size: 16px;
+	font-weight: bold;
+	color: #255e95;
+	background: url(../images/ico3.gif) no-repeat 15px center;
+	background-color:#e9faff;
+}
+.tabtxt2 {
+	font-family: 微软雅黑;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: right;
+	padding-right: 10px;
+	color:#327cd1;
+}
+.tabtxt3 {
+	font-family: 微软雅黑;
+	font-size: 14px;
+	padding-left: 15px;
+	color: #000;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	line-height: 20px;
+}
+
+    </style>
+        <style type="text/css" rel="stylesheet">
+        a{
+            color:black;　　/*这是默认*/
+        }
+        a:hover{
+            color:blue; /*这是鼠标经过*/
+        }
+        a:active{
+            color:red; /*这是鼠标点击后*/
+        }
+        </style>
+    <div class="col-md-12">
+        <div class="content-panel" style="margin-bottom: 12px;height:70px" >
+
+            <h5 ><span style="font-weight: bold;text-align: center"><font size="3" color="#00008b">站点更新</font> </span>
+                <button id="btn" style="background: #1ab394;width: 70px;height: 30px;margin: 0px 5px;padding: 0px"><a href="/update">ALL</a> </button>
+                <button id="btn" style="background: #3071a9;width: 70px;height: 30px;margin: 0px 5px;padding: 0px"><a href="/windows_upd">Windows</a> </button>
+                <button id="btn" style="background: #d9534f;width: 70px;height: 30px;margin: 0px 5px;padding: 0px"><a href="/linux_upd">Linux</a></button>
+            </h5>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="content-panel" style="margin-bottom: 30px">
+
+         <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+            <div id="charts-line" style="height:auto;" >
+                <body>
+                <form action="/add_items" method="post">
+                    <br>站点名<input name="items_name" type="text" >
+                    <br>站点地址<input name="items_place" type="text" >
+                    <br>站点系统<input name="items_system" type="text" >
+                    <br>站点SVN<input name="items_resource" type="text" >
+                    <input type="submit" value="提交" >
+                </form>
+                </body>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{#</body>#}
+
+{#</html>#}

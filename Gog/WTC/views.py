@@ -46,6 +46,11 @@ def linux_upd(request):
     username = request.COOKIES.get('username', '')
     return render_to_response('update/linux.html',{'username':username})
 
+def add_items(request):
+    username = request.COOKIES.get('username', '')
+
+    return render_to_response('update/items.html',{'username':username})
+
 def add(request):
     a = request.GET.get('a', 0)
     b = request.GET.get('b', 0)
@@ -176,7 +181,7 @@ def addAsset(request):
         all_asset_info = AssetInfo.objects.all()
         return render_to_response('asset/asset_list.html', {'error': error,'all_asset_info': all_asset_info})
 
-login_required()
+@login_required()
 def editHostAsset(request):
     # if request.method == "GET":
     #     return HttpResponseRedirect('/asset/list/page=1')
@@ -267,3 +272,19 @@ def assetAction(request):
                 for id in id_list:
                     addHostAsset(request, id)
                 # return HttpResponseRedirect('/asset/list')
+
+def Items_All(request):
+    items_all = Update_items.objects.all()
+    items_all_info = []
+    if len(items_all_info) > 0:
+        for i in items_all:
+            items_all_info.append({
+                'id':i.id,
+                'name':i.items_name,
+                'place':i.items_place,
+                'system':i.items_system,
+                'resource':i.items_resource,
+            })
+    else:
+        items_all_info.append("'It's Null!")
+    return HttpResponse(items_all_info)

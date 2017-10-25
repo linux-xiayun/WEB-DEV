@@ -25,6 +25,8 @@ urlpatterns = [
     url(r'^update$', views.update),
     url(r'^windows_upd$', views.windows_upd, name='windows_upd'),
     url(r'^linux_upd$', views.linux_upd, name='linux_upd'),
+    url(r'^add_items$', views.add_items, name='add_items'),
+    url(r'^test$', views.Items_All),
     url(r'^add/', views.add, name='add'),
     url(r'^add/(\d+)/(\d+)', views.c2, name='c2'),
     url(r'WTC/', views.home, name='WTC'),
