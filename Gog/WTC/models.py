@@ -101,7 +101,6 @@ class MinionInfo(models.Model):
     password = models.CharField(max_length=100)
 
 class Update_items(models.Model):
-    id = models.IntegerField(primary_key=True)
     items_name = models.CharField(max_length=50)
     items_place = models.CharField(max_length=50, null=True)
     items_system = models.CharField(max_length=50, null=True)

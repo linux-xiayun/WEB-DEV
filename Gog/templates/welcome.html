@@ -12,6 +12,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+      <link href="{% static 'css/bootstrap-theme.css' %}" rel="stylesheet">
     <!--external css-->
     <link href="{% static 'font-awesome/css/font-awesome.css' %}" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/extend/zabuto_calendar.css' %}">
@@ -39,7 +40,7 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="显示/隐藏导航栏"></div>
               </div>
             <!--logo start-->
-            <a href="/welcome" class="logo"><b>CMDB--运维管理平台</b></a>
+            <a href="/base" class="logo"><b>CMDB--运维管理平台</b></a>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
                     <li><a class="logout" href="/login">Logout</a></li>
@@ -58,7 +59,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
 
-              	  <p class="centered"><a href="/welcome"><img src="{% static 'img/cat_man.jpg' %}" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="/base"><img src="{% static 'img/cat_man.jpg' %}" class="img-circle" width="60"></a></p>
 
                   <h5 class="centered">{{ username }}<h5>
 
@@ -105,7 +106,37 @@
       <!--main content start-->
         <section id="main-content">
           <section class="wrapper site-min-height">
-            {% block content %} {% endblock %}
+            {% block content %}
+              <div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="jumbotron">
+				<h1>
+					Welcome
+				</h1>
+				<p>
+					<br>每一个运维背锅侠的祈愿：
+                    <br>佛祖保佑&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;永无BUG
+                    <br>佛曰:
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;写字楼里写字间，&nbsp;&nbsp;写字间里程序员；
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;程序人员写程序，&nbsp;&nbsp;又拿程序换酒钱。
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;酒醒只在网上坐，&nbsp;&nbsp;酒醉还来网下眠；
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;酒醉酒醒日复日，&nbsp;&nbsp;网上网下年复年。
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;但愿老死电脑间，&nbsp;&nbsp;不愿鞠躬老板前；
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;奔驰宝马贵者趣，&nbsp;&nbsp;公交自行程序员。
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别人笑我忒疯癫，&nbsp;&nbsp;我笑自己命太贱；
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不见满街漂亮妹，&nbsp;&nbsp;哪个归得程序员？
+				</p>
+				<p>
+					 <a class="btn btn-primary btn-large" href="#">Learn more</a>
+				</p>
+			</div>
+		</div>
+		<div class="col-md-4 column">
+		</div>
+	</div>
+</div>
+              {% endblock %}
           </section>
         </section>
       <!--main content end-->

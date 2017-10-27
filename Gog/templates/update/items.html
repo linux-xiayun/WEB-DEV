@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-<title>{% block title %}Linux更新{% endblock %}</title>
+<title>{% block title %}增加项目{% endblock %}</title>
 
 {% block active %} class="active" {% endblock %}
 
@@ -100,13 +100,38 @@
          <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
             <div id="charts-line" style="height:auto;" >
                 <body>
-                <form action="/add_items" method="post">
-                    <br><b>站点名</b><input name="items_name" type="text" >
-                    <br><b>站点地址</b><input name="items_place" type="text" >
-                    <br><b>站点系统</b><input name="items_system" type="text" >
-                    <br><b>站点SVN</b><input name="items_resource" type="text" >
-                    <input type="submit" value="提交" >
+                <!--script type="text/javascript">
+                    function check() {
+                        var form = document.getElementById('additems'),
+                            itemsname = document.getElementById('items_name');
+                        form.onsubmit = function () {
+                            if (itemsname && itemsname.value) {
+                                document.additems.submit();
+                            }else {
+                                alert('不能为空!')
+                                document.additems.name.focus();
+                            }
+                        }
+                    }
+                </script-->
+                <form action="/new_item/" method="post">{% csrf_token %}
+                    <br><b>站点名</b><input name="items_name" type="text" id="items_name">
+                    <br><b>站点地址</b><input name="items_place" type="text" id="items_place">
+                    <br><b>站点系统</b><input name="items_system" type="text" id="items_system">
+                    <br><b>站点SVN</b><input name="items_resource" type="text" id="items_resource">
+                    <input type="submit" value="提交">
                 </form>
+	                <div class="row clearfix">
+		                <div class="col-md-12 column">
+			                <h3>
+                                {% if messages %}
+                                {{ messages }}
+                                {% endif %}
+			                </h3>
+		                </div>
+	                 </div>
+
+
                 </body>
             </div>
         </div>
