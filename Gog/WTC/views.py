@@ -16,6 +16,7 @@ from django.template.context_processors import csrf
 import json
 import re
 import math
+import jenkins
 
 import ssl
 
@@ -26,9 +27,9 @@ table_name = 'web_access_count'
 field_name = 'insert_time'
 cursor = connection.cursor()
 
-def index_2(request):
-    IPaddr = request.META['REMOTE_ADDR']
-    return HttpResponse("欢迎光临！welcome！%s" % IPaddr)
+#def index_2(request):
+#    IPaddr = request.META['REMOTE_ADDR']
+#    return HttpResponse("欢迎光临！welcome！%s" % IPaddr)
 
 @login_required(login_url='login')
 def base(request):
@@ -107,7 +108,7 @@ def login(request):
             error = "用户名或密码错误，请重新输入。"
             return render_to_response("login.html",{'error':error},RequestContext(request))
 
-# @login_required  #只有用户在登录的情况下才能调用该视图，否则将自动重定向至登录页面。
+@login_required  #只有用户在登录的情况下才能调用该视图，否则将自动重定向至登录页面。
 def logout(request):
     auth.logout(request)
     response = HttpResponseRedirect('login')
@@ -282,22 +283,11 @@ def assetAction(request):
 #                for id in id_list:
 #                    addHostAsset(request, id)
 #                # return HttpResponseRedirect('/asset/list')
-
+@csrf_exempt
 def Items_All(request):
     items_all = Update_items.objects.all()
-    items_all_info = []
-    if len(items_all_info) > 0:
-        for i in items_all:
-            items_all_info.append({
-                'id':i.id,
-                'name':i.items_name,
-                'place':i.items_place,
-                'system':i.items_system,
-                'resource':i.items_resource,
-            })
-    else:
-        items_all_info.append("'It's Null!")
-    return HttpResponse(items_all_info)
+    username = request.COOKIES.get('username', '')
+    return render_to_response('index.html',{'items_all':items_all, 'username':username})
 
 @csrf_exempt
 def new_items(request):
@@ -318,4 +308,25 @@ def new_items(request):
         else:
             messages = "不能为空！"
             return render(request, 'update/items.html', {'messages':messages})
+
+@csrf_exempt
+def delete_items(request):
+    id = request.GET['id']
+    items = Update_items.objects.get(id=id)
+    items.delete()
+    return HttpResponseRedirect('/update')
+
+@csrf_exempt
+def query(request):
+    id = request.GET['id']
+    items = Update_items.objects.get(id=id)
+    return render_to_response('update/q.html',{'items':items})
+
+def jenkins_api(req):
+    jenkins_server_url = "http://127.0.0.1:8080"
+    user_id = 'root'
+    api_token = '9fb01ce9aa060d9e4702cdc601d05e9f'
+    server = jenkins.Jenkins(jenkins_server_url, username=user_id, password=api_token)
+    info = server.get_job_info(req)['lastBuild']['number']
+    print(info)
 

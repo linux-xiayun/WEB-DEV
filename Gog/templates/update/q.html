@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-<title>{% block title %}增加项目{% endblock %}</title>
+<title>{% block title %}站点更新{% endblock %}</title>
 
 {% block active %} class="active" {% endblock %}
 
@@ -25,7 +25,6 @@
         .box-content h3 {
             color: #428bca
         }
-
 .tabtop13 {
 	margin-top: 13px;
 }
@@ -92,56 +91,58 @@
                 <button id="btn" style="background: #3071a9;width: 70px;height: 30px;margin: 0px 5px;padding: 0px"><a href="/windows_upd">Windows</a> </button>
                 <button id="btn" style="background: #d9534f;width: 70px;height: 30px;margin: 0px 5px;padding: 0px"><a href="/linux_upd">Linux</a></button>
             </h5>
+
         </div>
     </div>
+        </div>
+    </div>
+
     <div class="col-md-12">
         <div class="content-panel" style="margin-bottom: 30px">
 
          <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
             <div id="charts-line" style="height:auto;" >
                 <body>
-                <!--script type="text/javascript">
-                    function check() {
-                        var form = document.getElementById('additems'),
-                            itemsname = document.getElementById('items_name');
-                        form.onsubmit = function () {
-                            if (itemsname && itemsname.value) {
-                                document.additems.submit();
-                            }else {
-                                alert('不能为空!')
-                                document.additems.name.focus();
-                            }
-                        }
-                    }
-                </script-->
-                <form action="/new_item/" method="post">{% csrf_token %}
-                    <br><b>站点名称</b>&nbsp;&nbsp;&nbsp;&nbsp;<input name="items_name" type="text" id="items_name" style="width: 200px">
-                    <br><b>站点地址</b>&nbsp;&nbsp;&nbsp;&nbsp;<input name="items_place" type="text" id="items_place" style="width: 200px">
-                    <br><b>站点系统</b>&nbsp;&nbsp;&nbsp;&nbsp;<input name="items_system" type="text" id="items_system" style="width: 200px">
-                    <br><b>源码地址</b>&nbsp;&nbsp;&nbsp;&nbsp;<input name="items_resource" type="text" id="items_resource" style="width: 200px">
-                    <div class="checkbox">
-					 <label><input type="checkbox" />Check me out</label>
-				    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
-	                <div class="row clearfix">
-		                <div class="col-md-12 column">
-			                <h3>
-                                {% if messages %}
-                                {{ messages }}
-                                {% endif %}
-			                </h3>
-		                </div>
-	                 </div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td align="center" class="biaoti" height="60">站点列表</td>
+  </tr>
+</table>
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<table class="table">
+				<thead>
+					<tr>
+						<!--th style="width: 40px">编号</th-->
+						<th style="width: 120px">站点项目</th>
+						<th style="width: 120px"> 站点地址</th>
+						<th style="width: 300px">站点系统</th>
+						<th>SVN地址</th>
+					    <th style="width: 120px">操作</th>
+					</tr>
+				</thead>
 
-
+				{% for d in items %}
+				<tbody>
+					<tr class="success">
+						<!--td>{{ d.id }}</td-->
+						<td>{{ d.items_name }}</td>
+						<td>{{ d.items_place }}</td>
+						<td>{{ d.items_system }}</td>
+						<td>{{ d.items_resource }}</td>
+						<td><a href="javascript:if(confirm('确实要删除吗?')) location='/delete?id={{ d.id }}'">删除</a>  <a href="/itemdata_update?id={{ d.id }}">更新</a></td>
+					</tr>
+				</tbody>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+</div>
                 </body>
             </div>
         </div>
     </div>
 {% endblock %}
-
-
 {#</body>#}
 
 {#</html>#}

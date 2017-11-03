@@ -114,7 +114,8 @@
          <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
             <div id="charts-line" style="height:auto;" >
                 <body>
-                <button id="btn" style="background: #1ab394;width: 70px;height: 30px;margin: 0px 5px;padding: 0px"><a href="/add_items">新增项目</a></button>
+				<!--<button id="btn" style="background: #00b3ee;width: 70px;height: 30px;margin: 0px 5px;padding: 0px"><a href="/q">查询</a></button>-->
+                <button id="btn" style="background: #00b3ee;width: 70px;height: 30px;margin: 0px 5px;padding: 0px"><a href="/add_items">新增项目</a></button>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
   <tr>
     <td align="center" class="biaoti" height="60">站点列表</td>
@@ -129,36 +130,28 @@
 			<table class="table">
 				<thead>
 					<tr>
-						<th>
-							编号
-						</th>
-						<th>
-							站点项目
-						</th>
-						<th>
-							站点地址
-						</th>
-						<th>
-							SVN地址
-						</th>
+						<!--th style="width: 40px">编号</th-->
+						<th style="width: 120px">站点项目</th>
+						<th style="width: 120px"> 站点地址</th>
+						<th style="width: 300px">站点系统</th>
+						<th>SVN地址</th>
+					    <th style="width: 120px">操作</th>
 					</tr>
 				</thead>
+				{% if items_all %}
+				{% for d in items_all %}
 				<tbody>
-					<tr>
-						<td>
-
-						</td>
-						<td>
-
-						</td>
-						<td>
-
-						</td>
-						<td>
-
-						</td>
-					</tr>
 					<tr class="success">
+						<!--td>{{ d.id }}</td-->
+						<td>{{ d.items_name }}</td>
+						<td>{{ d.items_place }}</td>
+						<td>{{ d.items_system }}</td>
+						<td>{{ d.items_resource }}</td>
+						<!--<td>[url=/delete?id={{ d.id }}]删除[/url]  [url=/index.html]添加[/url]  [url=/showid?id={{ d.id }}]修改[/url] </td>-->
+						<!--<td>[url=/index.html]添加[/url]</td>-->
+						<td><a href="javascript:if(confirm('确实要删除吗?')) location='/delete?id={{ d.id }}'" style="background: greenyellow">删除</a>  <a href="javascript:if(confirm('确实要更新吗?')) location=/itemdata_update?id={{ d.id }}" style="background: cyan">更新</a></td>
+					</tr>
+					<!--tr class="success">
 						<td>
 
 						</td>
@@ -213,8 +206,11 @@
 						<td>
 							
 						</td>
-					</tr>
+					</tr-->
 				</tbody>
+				{% endfor %}
+				{% endif %}
+
 			</table>
 		</div>
 	</div>
