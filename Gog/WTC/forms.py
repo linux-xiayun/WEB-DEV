@@ -1,6 +1,6 @@
 from django import forms
 
-class AddFrom(forms.Form):
+class AddForm(forms.Form):
     a = forms.IntegerField()
     b = forms.IntegerField()
 

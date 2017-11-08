@@ -30,11 +30,15 @@ urlpatterns = [
     url(r'^new_item/$', views.new_items),
     url(r'^q$', views.query),
     url(r'^delete$', views.delete_items),
-    url(r'^test$', views.Items_All),
+    url(r'^itemdata_update$', views.itemdata_update),
+    url(r'^add/$', views.add),
+    url(r'^test/$',views.test),
     url(r'^asset/list/page=(\d+)$', views.assetList, name="asset_list"),
     url(r'^asset/add$', views.addAsset, name="asset_add"),
     url(r'^asset/edit$', views.editHostAsset, name="asset_edit"),
     url(r'^asset/action$', views.assetAction, name="asset_action"),
+    url(r'^ajax_list/$', views.ajax_list, name='ajax-list'),
+    url(r'^ajax_dict/$', views.ajax_dict, name='ajax-dict'),
 
 ]
 

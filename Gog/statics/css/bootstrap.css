@@ -3165,6 +3165,12 @@ tbody.collapse.in {
   right: 0;
   left: auto;
 }
+.div_show{
+  display:block;
+}
+.div_hide{
+  display:none;
+}
 .dropdown-menu .divider {
   height: 1px;
   margin: 9px 0;

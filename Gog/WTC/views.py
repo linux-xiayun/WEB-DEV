@@ -1,9 +1,9 @@
 #coding:utf-8
 from django.shortcuts import render, render_to_response, redirect
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from .models import *
 # 引入我们创建的表单类
-from .forms import AddFrom
+from .forms import AddForm
 from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
 from django.contrib import auth
@@ -17,8 +17,9 @@ import json
 import re
 import math
 import jenkins
-
 import ssl
+from .jenkins_api import jenkins_api
+import json
 
 ssl._create_default_https_context = ssl._create_unverified_context
 # urllib.urlopen一个https的时候会验证一次SSL证书,当目标使用的是自签名的证书时就会抛出一个错误
@@ -30,6 +31,23 @@ cursor = connection.cursor()
 #def index_2(request):
 #    IPaddr = request.META['REMOTE_ADDR']
 #    return HttpResponse("欢迎光临！welcome！%s" % IPaddr)
+def test(request):
+    return render_to_response('test.html')
+
+def ajax_list(request):
+    a = list(range(10))
+    return JsonResponse(a, safe=False)
+
+def add(request):
+    a = request.GET['a']
+    b = request.GET['b']
+    a = int(a)
+    b = int(b)
+    return HttpResponse(str(a+b))
+
+def ajax_dict(request):
+    name_dict = {'twz': 'Love python and Django', 'zqxt': 'I am teaching Django'}
+    return JsonResponse(name_dict)
 
 @login_required(login_url='login')
 def base(request):
@@ -322,11 +340,11 @@ def query(request):
     items = Update_items.objects.get(id=id)
     return render_to_response('update/q.html',{'items':items})
 
-def jenkins_api(req):
-    jenkins_server_url = "http://127.0.0.1:8080"
-    user_id = 'root'
-    api_token = '9fb01ce9aa060d9e4702cdc601d05e9f'
-    server = jenkins.Jenkins(jenkins_server_url, username=user_id, password=api_token)
-    info = server.get_job_info(req)['lastBuild']['number']
-    print(info)
 
+def itemdata_update(request):
+    job_name = str(request.GET['job_name'])
+    jenkins_api(job_name)
+    items_all = Update_items.objects.all()
+    username = request.COOKIES.get('username', '')
+    return render_to_response('index.html',{'items_all':items_all, 'username':username})
+    # return render_to_response('index.html', {'build_stat': build_stat})

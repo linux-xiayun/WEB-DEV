@@ -23,6 +23,7 @@
     <link href="{% static 'css/custom/style.css' %}" rel="stylesheet">
     <link href="{% static 'css/custom/style-responsive.css' %}" rel="stylesheet">
 
+
     {% block costom_style %}{% endblock %}
 
     {% csrf_token %}
@@ -40,7 +41,7 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="显示/隐藏导航栏"></div>
               </div>
             <!--logo start-->
-            <a href="/base" class="logo"><b>CMDB--运维管理平台</b></a>
+            <a href="/welcome" class="logo"><b>CMDB--运维管理平台</b></a>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
                     <li><a class="logout" href="/login">Logout</a></li>
@@ -59,7 +60,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
 
-              	  <p class="centered"><a href="/base"><img src="{% static 'img/cat_man.jpg' %}" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="/welcome"><img src="{% static 'img/cat_man.jpg' %}" class="img-circle" width="60"></a></p>
 
                   <h5 class="centered">{{ username }}<h5>
 
@@ -104,13 +105,39 @@
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
       <!--main content start-->
+      <script language="javaScript">
+        function showHideText(){  document.getElementById("txt2").className="div_show";}
+    </script>
+<script>
+window.onload=function()
+{
+var oBtn=document.getElementById("btn1");
+var txt_1=document.getElementById("txt1");
+var txt_2=document.getElementById("txt2");
+
+oBtn.onclick=function()
+{
+if(txt_2.style.display=="block")
+{
+    txt_1.style.display="block";
+    txt_2.style.display="none";
+    oBtn.innerHTML = "更新须知"
+}
+else
+{
+    txt_1.style.display="none";
+    txt_2.style.display="block";
+    oBtn.innerHTML = "返回"
+}
+} }
+</script>
         <section id="main-content">
           <section class="wrapper site-min-height">
             {% block content %}
               <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
-			<div class="jumbotron">
+            <div id="txt1" class="jumbotron">
 				<h1>
 					Welcome
 				</h1>
@@ -127,10 +154,23 @@
                     <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别人笑我忒疯癫，&nbsp;&nbsp;我笑自己命太贱；
                     <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不见满街漂亮妹，&nbsp;&nbsp;哪个归得程序员？
 				</p>
+            </div>
+            <div id="txt2" class=" alert alert-dismissable alert-info" hidden>
+                    <!--<div class="alert alert-dismissable alert-info">-->
+				        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+				        <h4>
+					        注意!
+				        </h4>
+                        <strong>Warning!</strong> Best check yo self, you're not looking too good.
+			        <!--</div>-->
+            </div>
 				<p>
-					 <a class="btn btn-primary btn-large" href="#">Learn more</a>
+
+					 <!--<a class="btn btn-primary btn-large" id="update_warning" onclick="warn()">更新须知</a>-->
+                    <!--button type="button" onclick="showHideText()">更新须知</button-->
+                    <button class="btn btn-default" id="btn1" style="background: powderblue;font-weight: bold">更新须知</button>
 				</p>
-			</div>
+
 		</div>
 		<div class="col-md-4 column">
 		</div>
