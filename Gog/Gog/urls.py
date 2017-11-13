@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from WTC import views
+from django.views.generic.base import RedirectView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -31,6 +32,7 @@ urlpatterns = [
     url(r'^q$', views.query),
     url(r'^delete$', views.delete_items),
     url(r'^itemdata_update$', views.itemdata_update),
+    url(r'^itemdata_rollback$', views.itemdata_rollback),
     url(r'^add/$', views.add),
     url(r'^test/$',views.test),
     url(r'^asset/list/page=(\d+)$', views.assetList, name="asset_list"),
@@ -39,6 +41,8 @@ urlpatterns = [
     url(r'^asset/action$', views.assetAction, name="asset_action"),
     url(r'^ajax_list/$', views.ajax_list, name='ajax-list'),
     url(r'^ajax_dict/$', views.ajax_dict, name='ajax-dict'),
+    url(r'^favicon.ico$',RedirectView.as_view(url=r'static/img/favicon.ico')),
+    url(r'^jenkins/$', views.cmdb, name='jenkins'),
 
 ]
 

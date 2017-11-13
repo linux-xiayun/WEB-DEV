@@ -18,7 +18,7 @@ import re
 import math
 import jenkins
 import ssl
-from .jenkins_api import jenkins_api
+from .jenkins_api import *
 import json
 
 ssl._create_default_https_context = ssl._create_unverified_context
@@ -326,7 +326,7 @@ def new_items(request):
         else:
             messages = "不能为空！"
             return render(request, 'update/items.html', {'messages':messages})
-
+#删除项目
 @csrf_exempt
 def delete_items(request):
     id = request.GET['id']
@@ -340,11 +340,25 @@ def query(request):
     items = Update_items.objects.get(id=id)
     return render_to_response('update/q.html',{'items':items})
 
-
+#项目更新
 def itemdata_update(request):
     job_name = str(request.GET['job_name'])
-    jenkins_api(job_name)
+    jenkins_update(job_name)
     items_all = Update_items.objects.all()
     username = request.COOKIES.get('username', '')
     return render_to_response('index.html',{'items_all':items_all, 'username':username})
     # return render_to_response('index.html', {'build_stat': build_stat})
+
+#项目回滚
+def itemdata_rollback(request):
+    job_name = "rollback_" + str(request.GET['job_name'])
+    print(job_name)
+    datetime = str(request.GET['datetime'])
+    print(datetime)
+    jenkins_rollback(job_name, datetime)
+    items_all = Update_items.objects.all()
+    username = request.COOKIES.get('username', '')
+    return render_to_response('index.html',{'items_all':items_all, 'username':username})
+
+def cmdb(request):
+    return HttpResponseRedirect('http://192.168.1.38:8080/')

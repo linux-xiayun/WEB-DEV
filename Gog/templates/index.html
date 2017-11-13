@@ -105,8 +105,8 @@
             <!--button id="btn" style="background: #1ab394;padding-right: 14px;padding-left: 14px" onclick="week()">近7天</button-->
             <!--button id="btn" style="background: #1ab394;padding-right: 18px;padding-left: 18px" onclick="openUpdate()">今天</button-->  {# 浅绿色 #23c6c8 #}
             <!--button id="btn" style="background: #1ab394;padding-right: 14px;padding-left: 14px" onclick="dayPUV()">昨日总PV/UV</button-->
-        </div>
-    </div>
+        <!--</div>-->
+    <!--</div>-->
 
     <div class="col-md-12">
         <div class="content-panel" style="margin-bottom: 30px">
@@ -149,7 +149,17 @@
 						<td>{{ d.items_resource }}</td>
 						<!--<td>[url=/delete?id={{ d.id }}]删除[/url]  [url=/index.html]添加[/url]  [url=/showid?id={{ d.id }}]修改[/url] </td>-->
 						<!--<td>[url=/index.html]添加[/url]</td>-->
-						<td><a href="javascript:if(confirm('确实要删除吗?')) location='/delete?id={{ d.id }}'" style="background: greenyellow">删除</a>  <a href="javascript:if(confirm('确实要更新吗?')) location='/itemdata_update?job_name={{ d.items_name }}'" id="binupdate" style="background: cyan">更新</a></td>
+                        <script type="text/javascript">
+                            function rollback() {
+                                var str = prompt('请输入要回滚的时间', '比如20171111');
+                                if (str) {
+                                    Url = '/itemdata_rollback?job_name={{ d.items_name }}&datetime='+str
+                                    window.location(Url)
+                                    alert('项目已回滚至：' + '' + str)
+                                }
+                            }
+                        </script>
+						<td>  <a href="javascript:if(confirm('确实要更新吗?')) location='/itemdata_update?job_name={{ d.items_name }}'" id="binupdate" style="background: cyan">更新</a>&nbsp;&nbsp; <a href="javascript:var str = prompt('请输入要回滚的时间', '比如20171111');if (str){Url = '/itemdata_rollback?job_name={{ d.items_name }}&datetime='+str;location=Url;alert('项目已回滚至：' + '' + str)}" id="binrollback" style="background:  greenyellow">回滚</a>&nbsp;&nbsp; <a href="javascript:if(confirm('确实要删除吗?')) location='/delete?id={{ d.id }}'" style="background: #ff9999">删除</a></td>
                 {% if build_stat %}
                         <script type="text/javascript">
                             stat="{{build_stat}}";

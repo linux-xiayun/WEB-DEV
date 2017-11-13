@@ -58,9 +58,9 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
 
-              	  <p class="centered"><a href="/welcome"><img src="{% static 'img/cat_man.jpg' %}" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="/welcome"><img src="{% static 'img/cat_man.jpg' %}" class="img-circle" width="55"></a></p>
 
-                  <h5 class="centered">{{ username }}<h5>
+                  <h5 class="centered">{{ username }}</h5>
 
                   <li class="mt">
                       <a {% block active %}{% endblock %} href="/update">
@@ -75,7 +75,7 @@
                           <span>资产管理</span>
                       </a>
                       <ul class="sub">
-                          <li {% block active_1_1 %}{% endblock %}><!--a href="/asset/list/page=1"--><a href="/base"> 资产列表</a></li>
+                          <li {% block active_1_1 %}{% endblock %}><a href="#"> 资产列表</a></li>
                       </ul>
                   </li>
 
@@ -85,9 +85,15 @@
                           <span>主机管理</span>
                       </a>
                       <ul class="sub">
-                          <li {% block active_2_1 %}{% endblock %}>主机列表</li>
-                          <li {% block active_2_2 %}{% endblock %}>批量管理</li>
+                          <li {% block active_2_1 %}{% endblock %}><a href="#">主机列表</a></li>
+                          <li {% block active_2_2 %}{% endblock %}><a href="#">批量管理</a></li>
                       </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a {% block active_3 %}{% endblock %} href="{% url 'jenkins' %}" target="_blank">
+                          <i class="fa fa-fire"></i>
+                          <span>Jenkins</span>
+                      </a>
                   </li>
               </ul>
               <!-- sidebar menu end-->
