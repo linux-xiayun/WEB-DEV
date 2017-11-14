@@ -1,5 +1,5 @@
 # WEB-DEV
-used pyenv python3.5.4 django1.8
+used pyenv python3.5.4 django1.8 mysql
 
 pyenv install 3.5.4
 
