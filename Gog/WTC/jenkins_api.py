@@ -4,7 +4,7 @@ import time
 def jenkins_update(req):
     datetime = time.strftime('%Y%m%d', time.localtime(time.time()))
     req = str(req)
-    jenkins_server_url = "http://192.168.1.38:8080"
+    jenkins_server_url = "http://115.236.182.186:18080/"
     user_id = 'admin'
     api_token = '24e78c29c3a6c0ee886413403d4a2fa2'
     server = jenkins.Jenkins(jenkins_server_url, username=user_id, password=api_token)
@@ -20,7 +20,7 @@ def jenkins_update(req):
 def jenkins_rollback(jobname, datetime):
     job_name = str(jobname)
     datetime = str(datetime)
-    jenkins_server_url = "http://192.168.1.38:8080"
+    jenkins_server_url = "http://115.236.182.186:18080/"
     user_id = 'admin'
     api_token = '24e78c29c3a6c0ee886413403d4a2fa2'
     server = jenkins.Jenkins(jenkins_server_url, username=user_id, password=api_token)
