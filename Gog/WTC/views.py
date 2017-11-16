@@ -20,6 +20,7 @@ import jenkins
 import ssl
 from .jenkins_api import *
 import json
+from .ansible_api import popen
 
 ssl._create_default_https_context = ssl._create_unverified_context
 # urllib.urlopen一个https的时候会验证一次SSL证书,当目标使用的是自签名的证书时就会抛出一个错误
@@ -352,13 +353,17 @@ def itemdata_update(request):
 #项目回滚
 def itemdata_rollback(request):
     job_name = "rollback_" + str(request.GET['job_name'])
-    print(job_name)
+    # print(job_name)
     datetime = str(request.GET['datetime'])
-    print(datetime)
+    # print(datetime)
     jenkins_rollback(job_name, datetime)
     items_all = Update_items.objects.all()
     username = request.COOKIES.get('username', '')
     return render_to_response('index.html',{'items_all':items_all, 'username':username})
 
-def cmdb(request):
+def jenkinsurl(request):
     return HttpResponseRedirect('http://192.168.1.38:8080/')
+
+def ansible_api(request):
+    patten_name = str(request.GET['job_name'])
+    popen(patten_name)

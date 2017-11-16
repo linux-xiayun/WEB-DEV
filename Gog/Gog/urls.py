@@ -42,7 +42,8 @@ urlpatterns = [
     url(r'^ajax_list/$', views.ajax_list, name='ajax-list'),
     url(r'^ajax_dict/$', views.ajax_dict, name='ajax-dict'),
     url(r'^favicon.ico$',RedirectView.as_view(url=r'static/img/favicon.ico')),
-    url(r'^jenkins/$', views.cmdb, name='jenkins'),
+    url(r'^jenkins/$', views.jenkinsurl, name='jenkins'),
+    url(r'^publish/$', views.ansible_api, name='publish'),
 
 ]
 
