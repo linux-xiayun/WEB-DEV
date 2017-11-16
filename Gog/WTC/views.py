@@ -16,7 +16,7 @@ from django.template.context_processors import csrf
 import json
 import re
 import math
-import jenkins
+#import jenkins
 import ssl
 from .jenkins_api import *
 import json
