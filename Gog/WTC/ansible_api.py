@@ -5,7 +5,7 @@ import os
 
 
 def popen(request):
-    ansible_shell = "ansible %s -m win_ping" % request
+    ansible_shell = "ansible-playbook /etc/ansible/playbooks/%s.yml" % request
     subprocess.call(ansible_shell, shell=True)
 
 #if __name__ == "__main__":

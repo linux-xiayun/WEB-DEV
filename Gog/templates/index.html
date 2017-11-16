@@ -135,13 +135,13 @@
 						<th style="width: 120px"> 站点地址</th>
 						<th style="width: 300px">站点系统</th>
 						<th>SVN地址</th>
-					    <th style="width: 120px">操作</th>
+					    <th style="width: 90px">操作</th>
 					</tr>
 				</thead>
 				{% if items_all %}
 				{% for d in items_all %}
 				<tbody>
-					<tr class="success">
+					<tr class="success" >
 						<!--td>{{ d.id }}</td-->
 						<td>{{ d.items_name }}</td>
 						<td>{{ d.items_place }}</td>
@@ -159,7 +159,8 @@
                                 }
                             }
                         </script>
-						<td>  <a href="javascript:if(confirm('确实要更新吗?')) location='/itemdata_update?job_name={{ d.items_name }}'" id="binupdate" style="background: cyan">更新</a>&nbsp;&nbsp; <a href="javascript:var str = prompt('请输入要回滚的时间', '比如20171111');if (str){Url = '/itemdata_rollback?job_name={{ d.items_name }}&datetime='+str;location=Url;alert('项目已回滚至：' + '' + str)}" id="binrollback" style="background:  greenyellow">回滚</a>&nbsp;&nbsp; <a href="javascript:if(confirm('确实要删除吗?')) location='/delete?id={{ d.id }}'" style="background: #ff9999">删除</a></td>
+						<td>  <a href="javascript:if(confirm('确实要编译吗?')) location='/itemdata_update?job_name={{ d.items_name }}'" id="binupdate" style="background: cyan">编译</a>&nbsp;&nbsp; <a href="javascript:if(confirm('确实更新到站点吗?')) location='/publish?job_name={{ d.items_name }}'" id="binpublish" style="background: cyan">更新</a><br><br>  <a href="javascript:var str = prompt('请输入要回滚的时间', '比如20171111');if (str){Url = '/itemdata_rollback?job_name={{ d.items_name }}&datetime='+str;location=Url;alert('项目已回滚至：' + '' + str)}" id="binrollback" style="background:  greenyellow">回滚</a>&nbsp;&nbsp; <a href="javascript:if(confirm('确实要删除吗?')) location='/delete?id={{ d.id }}'" style="background: #ff9999">删除</a>
+                        </td>
                 {% if build_stat %}
                         <script type="text/javascript">
                             stat="{{build_stat}}";
