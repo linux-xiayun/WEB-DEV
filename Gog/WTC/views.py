@@ -367,3 +367,6 @@ def jenkinsurl(request):
 def ansible_api(request):
     patten_name = str(request.GET['job_name'])
     popen(patten_name)
+    items_all = Update_items.objects.all()
+    username = request.COOKIES.get('username', '')
+    return render_to_response('index.html', {'items_all': items_all, 'username': username})
