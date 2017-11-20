@@ -18,6 +18,7 @@ from django.contrib import admin
 from WTC import views
 from django.views.generic.base import RedirectView
 
+admin.autodiscover()
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.login),
