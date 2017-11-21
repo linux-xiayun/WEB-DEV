@@ -42,7 +42,7 @@
             <a href="/welcome" class="logo"><b>CMDB--运维管理平台</b></a>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="/login">Logout</a></li>
+                    <li><a class="logout" href="/logout">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -60,7 +60,7 @@
 
               	  <p class="centered"><a href="/welcome"><img src="{% static 'img/cat_man.jpg' %}" class="img-circle" width="55"></a></p>
 
-                  <h5 class="centered" id="name">{{ username }}</h5>
+                  <h5 class="centered" id="name">{{ request.session.username }}</h5>
 
                   <li class="mt">
                       <a {% block active %}{% endblock %} href="/update">

@@ -22,7 +22,8 @@ admin.autodiscover()
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.login),
-    url(r'^login$', views.login),
+    url(r'^login$', views.login, name='login'),
+    url(r'^logout$', views.logout, name='logout'),
     url(r'^base$', views.base),
     url(r'^welcome$', views.welcome),
     url(r'^update$', views.Items_All),
@@ -41,8 +42,6 @@ urlpatterns = [
     url(r'^favicon.ico$',RedirectView.as_view(url=r'static/img/favicon.ico')),
     url(r'^jenkins/$', views.jenkinsurl, name='jenkins'),
     url(r'^publish$', views.ansible_api, name='publish'),
-    url(r'^login$', 'django.contrib.auth.views.login'),
-    url(r'^$', 'django.contrib.auth.views.login'),
 
 ]
 

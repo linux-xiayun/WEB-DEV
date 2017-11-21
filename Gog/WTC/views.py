@@ -30,34 +30,32 @@ field_name = 'insert_time'
 cursor = connection.cursor()
 
 
-@login_required(login_url='/')
+@login_required(login_url='/login')
 def base(request):
-    username = request.COOKIES.get('username','')
-    return render_to_response('base.html', {'username': username})
+    return render(request, 'base.html')
 
 @login_required(login_url='/login')
 def welcome(request):
-    username = request.COOKIES.get('username','')
-    return render_to_response('welcome.html', {'username': username})
+    return render(request, 'welcome.html')
 
 @login_required(login_url='/')
 def update(request):
-    username = request.COOKIES.get('username', '')
+    username = request.session.get('username', '')
     return render_to_response('index.html',{'username':username})
 
 @login_required(login_url='/')
 def windows_upd(request):
-    username = request.COOKIES.get('username', '')
+    username = request.session.get('username', '')
     return render_to_response('update/windows.html',{'username':username})
 
 @login_required(login_url='/')
 def linux_upd(request):
-    username = request.COOKIES.get('username', '')
+    username = request.session.get('username', '')
     return render_to_response('update/linux.html',{'username':username})
 
 @login_required(login_url='/')
 def add_items(request):
-    username = request.COOKIES.get('username', '')
+    username = request.session.get('username', '')
 
     return render_to_response('update/items.html',{'username':username})
 
@@ -73,20 +71,21 @@ def login(request):
         user = auth.authenticate(username=username, password=password)
         if user is not None:
             auth.login(request, user)
+            request.session['username'] = username
+            request.session.set_expiry(0)
             response = HttpResponseRedirect('welcome')
-            response.set_cookie('username', username)
             return response
         else:
             error = "用户名或密码错误，请重新输入。"
             return render_to_response("login.html",{'error':error},RequestContext(request))
 
-@login_required  #只有用户在登录的情况下才能调用该视图，否则将自动重定向至登录页面。
+@login_required(login_url='/')  #只有用户在登录的情况下才能调用该视图，否则将自动重定向至登录页面。
 def logout(request):
     auth.logout(request)
-    response = HttpResponseRedirect('login')
-    response.delete_cookie('username', 'sessionid', 'csrftoken')
-    del request.session
-    return response
+    #del request.session['username']
+    request.session.clear()
+    #response = HttpResponseRedirect('login')
+    return render(request, 'login.html')
 
 @login_required()
 def assetList(request, page):
@@ -260,7 +259,7 @@ def assetAction(request):
 @csrf_exempt
 def Items_All(request):
     items_all = Update_items.objects.all()
-    username = request.COOKIES.get('username', '')
+    username = request.session.get('username', '')
     return render_to_response('index.html',{'items_all':items_all, 'username':username})
 
 @login_required(login_url='/')
@@ -305,7 +304,7 @@ def itemdata_update(request):
     job_name = str(request.GET['job_name'])
     jenkins_update(job_name)
     items_all = Update_items.objects.all()
-    username = request.COOKIES.get('username', '')
+    username = request.session.get('username', '')
     return render_to_response('index.html',{'items_all':items_all, 'username':username})
     # return render_to_response('index.html', {'build_stat': build_stat})
 
@@ -318,7 +317,7 @@ def itemdata_rollback(request):
     # print(datetime)
     jenkins_rollback(job_name, datetime)
     items_all = Update_items.objects.all()
-    username = request.COOKIES.get('username', '')
+    username = request.session.get('username', '')
     return render_to_response('index.html',{'items_all':items_all, 'username':username})
 
 @login_required(login_url='/')
@@ -330,5 +329,5 @@ def ansible_api(request):
     patten_name = str(request.GET['job_name'])
     popen(patten_name)
     items_all = Update_items.objects.all()
-    username = request.COOKIES.get('username', '')
+    username = request.session.get('username', '')
     return render_to_response('index.html', {'items_all': items_all, 'username': username})
