@@ -34,17 +34,15 @@ urlpatterns = [
     url(r'^delete$', views.delete_items),
     url(r'^itemdata_update$', views.itemdata_update),
     url(r'^itemdata_rollback$', views.itemdata_rollback),
-    url(r'^add/$', views.add),
-    url(r'^test/$',views.test),
     url(r'^asset/list/page=(\d+)$', views.assetList, name="asset_list"),
     url(r'^asset/add$', views.addAsset, name="asset_add"),
     url(r'^asset/edit$', views.editHostAsset, name="asset_edit"),
     url(r'^asset/action$', views.assetAction, name="asset_action"),
-    url(r'^ajax_list/$', views.ajax_list, name='ajax-list'),
-    url(r'^ajax_dict/$', views.ajax_dict, name='ajax-dict'),
     url(r'^favicon.ico$',RedirectView.as_view(url=r'static/img/favicon.ico')),
     url(r'^jenkins/$', views.jenkinsurl, name='jenkins'),
     url(r'^publish$', views.ansible_api, name='publish'),
+    url(r'^login$', 'django.contrib.auth.views.login'),
+    url(r'^$', 'django.contrib.auth.views.login'),
 
 ]
 

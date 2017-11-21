@@ -29,84 +29,37 @@ table_name = 'web_access_count'
 field_name = 'insert_time'
 cursor = connection.cursor()
 
-#def index_2(request):
-#    IPaddr = request.META['REMOTE_ADDR']
-#    return HttpResponse("欢迎光临！welcome！%s" % IPaddr)
-def test(request):
-    return render_to_response('test.html')
 
-def ajax_list(request):
-    a = list(range(10))
-    return JsonResponse(a, safe=False)
-
-def add(request):
-    a = request.GET['a']
-    b = request.GET['b']
-    a = int(a)
-    b = int(b)
-    return HttpResponse(str(a+b))
-
-def ajax_dict(request):
-    name_dict = {'twz': 'Love python and Django', 'zqxt': 'I am teaching Django'}
-    return JsonResponse(name_dict)
-
-@login_required(login_url='login')
+@login_required(login_url='/')
 def base(request):
     username = request.COOKIES.get('username','')
     return render_to_response('base.html', {'username': username})
 
+@login_required(login_url='/login')
 def welcome(request):
     username = request.COOKIES.get('username','')
     return render_to_response('welcome.html', {'username': username})
 
+@login_required(login_url='/')
 def update(request):
     username = request.COOKIES.get('username', '')
     return render_to_response('index.html',{'username':username})
 
+@login_required(login_url='/')
 def windows_upd(request):
     username = request.COOKIES.get('username', '')
     return render_to_response('update/windows.html',{'username':username})
 
+@login_required(login_url='/')
 def linux_upd(request):
     username = request.COOKIES.get('username', '')
     return render_to_response('update/linux.html',{'username':username})
 
+@login_required(login_url='/')
 def add_items(request):
     username = request.COOKIES.get('username', '')
 
     return render_to_response('update/items.html',{'username':username})
-
-#def add(request):
-#    a = request.GET.get('a', 0)
-#    b = request.GET.get('b', 0)
-#    c = int(a) + int(b)
-#    return HttpResponse(str(c))
-
-##def c2(request):
-##    a = request.GET.get('a', 0)
-##    b = request.GET.get('b', 0)
-##    c = int(a) * int(b)
-##    return HttpResponse(str(c))
-
-###def home(request):
-###    s###tring = "狗狗无敌，瓦特上天！！！"
-###    return render(request, 'WTC/home.html', {'string': string})
-
-#def include_xiay(request):
-#    messages = Person.objects.filter(first_name__iexact="xia", last_name__iexact="yun").values('age')
-#    return HttpResponse(messages)
-
-#def add_int(request):
-#    if request.method == 'POST':# 当提交表单时
-#        form = AddFrom(request.POST)# form 包含提交的数据
-#
-#        if form.is_valid():# 如果提交的数据合法
-#            a = form.cleaned_data['a']
-#            b = form.cleaned_data['b']
-#            return HttpResponse(str(int(a)+int(b)))
-#    else:# 当正常访问时
-#        form = AddFrom()
-#    return render(request, 'WTC/add_2.html', {'form':form})
 
 
 def login(request):
@@ -131,7 +84,8 @@ def login(request):
 def logout(request):
     auth.logout(request)
     response = HttpResponseRedirect('login')
-    response.delete_cookie('username')
+    response.delete_cookie('username', 'sessionid', 'csrftoken')
+    del request.session
     return response
 
 @login_required()
@@ -276,7 +230,7 @@ def delHostAsset(request, id):
 #            AssetInfo.objects.get(id=id).delete()
 #        # return HttpResponseRedirect('/asset/list')
 
-@login_required()
+@login_required(login_url='/')
 ## 按钮操作
 def assetAction(request):
     pass
@@ -302,12 +256,14 @@ def assetAction(request):
 #                for id in id_list:
 #                    addHostAsset(request, id)
 #                # return HttpResponseRedirect('/asset/list')
+@login_required(login_url='/')
 @csrf_exempt
 def Items_All(request):
     items_all = Update_items.objects.all()
     username = request.COOKIES.get('username', '')
     return render_to_response('index.html',{'items_all':items_all, 'username':username})
 
+@login_required(login_url='/')
 @csrf_exempt
 def new_items(request):
     if request.method == 'POST':
@@ -328,6 +284,7 @@ def new_items(request):
             messages = "不能为空！"
             return render(request, 'update/items.html', {'messages':messages})
 #删除项目
+@login_required(login_url='/')
 @csrf_exempt
 def delete_items(request):
     id = request.GET['id']
@@ -335,6 +292,7 @@ def delete_items(request):
     items.delete()
     return HttpResponseRedirect('/update')
 
+@login_required(login_url='/')
 @csrf_exempt
 def query(request):
     id = request.GET['id']
@@ -342,6 +300,7 @@ def query(request):
     return render_to_response('update/q.html',{'items':items})
 
 #项目更新
+@login_required(login_url='/')
 def itemdata_update(request):
     job_name = str(request.GET['job_name'])
     jenkins_update(job_name)
@@ -351,6 +310,7 @@ def itemdata_update(request):
     # return render_to_response('index.html', {'build_stat': build_stat})
 
 #项目回滚
+@login_required(login_url='/')
 def itemdata_rollback(request):
     job_name = "rollback_" + str(request.GET['job_name'])
     # print(job_name)
@@ -361,9 +321,11 @@ def itemdata_rollback(request):
     username = request.COOKIES.get('username', '')
     return render_to_response('index.html',{'items_all':items_all, 'username':username})
 
+@login_required(login_url='/')
 def jenkinsurl(request):
     return HttpResponseRedirect('http://192.168.1.38:8080/')
 
+@login_required(login_url='/')
 def ansible_api(request):
     patten_name = str(request.GET['job_name'])
     popen(patten_name)
