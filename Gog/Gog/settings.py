@@ -127,11 +127,11 @@ LOGGING = {
             'class': 'logging.StreamHandler',
         },
     },
-    'loggers': {
-        'django.db.backends': {
-            'handlers': ['console'],
-            'level': 'ERROR', #if DEBUG else 'INFO',
-
-        },
-    }
+    # 'loggers': {
+    #     'django.db.backends': {
+    #         'handlers': ['console'],
+    #         'level': 'ERROR', #if DEBUG else 'INFO',
+    #
+    #     },
+    # }
 }
