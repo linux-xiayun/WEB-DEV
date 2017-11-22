@@ -349,3 +349,11 @@ def linux_upd(request):
 @login_required(login_url='/login')
 def add_items(request):
     return render(request, 'update/items.html')
+
+@login_required(login_url='/login')
+def testzabbix(request):
+    return render(request, 'zabbix.html')
+
+@login_required(login_url='/login')
+def testadmin(request):
+    return render(request, 'admin.html')

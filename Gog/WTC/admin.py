@@ -50,4 +50,4 @@ class WTCConfig(AppConfig):
 # admin.site.register(Article, ArticleAdmin)
 # admin.site.register(Person, PersonAdmin)
 admin.site.register(Update_items, ItemsAdmin)
-admin.site.site_header = u"CMDB管理后台"
+admin.site.site_header = "CMDB管理后台"
