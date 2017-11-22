@@ -25,6 +25,7 @@
         .box-content h3 {
             color: #428bca
         }
+
 .tabtop13 {
 	margin-top: 13px;
 }
@@ -112,19 +113,128 @@
         <div class="content-panel" style="margin-bottom: 30px">
 
          <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-            <div id="charts-line" style="height:400px;" >
+            <div id="charts-line" style="height:auto;" >
                 <body>
-                    <h1>Windows站点更新</h1>
-                    <p>Windows列表</p>
-                    <p>
-                    <div align="center">
-                        <img src="static/img/caonima.png">
-                    </div>
-                    </p>
+                    <h1>Linux站点更新</h1>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td align="center" class="biaoti" height="60">站点列表</td>
+  </tr>
+  <!--tr>
+    <td align="right" height="25">2017-01-02---2017-05-02</td>
+  </tr-->
+</table>
+
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<table class="table">
+				<thead>
+					<tr>
+						<!--th style="width: 40px">编号</th-->
+						<th style="width: 120px">站点项目</th>
+						<th style="width: 120px"> 站点地址</th>
+						<th style="width: 300px">站点系统</th>
+						<th>SVN地址</th>
+					    <th style="width: 90px">操作</th>
+					</tr>
+				</thead>
+				{% if windows_items %}
+				{% for d in windows_items %}
+				<tbody>
+					<tr class="success" >
+						<!--td>{{ d.id }}</td-->
+						<td>{{ d.items_name }}</td>
+						<td>{{ d.items_place }}</td>
+						<td>{{ d.items_system }}</td>
+						<td>{{ d.items_resource }}</td>
+						<!--<td>[url=/delete?id={{ d.id }}]删除[/url]  [url=/update.html]添加[/url]  [url=/showid?id={{ d.id }}]修改[/url] </td>-->
+						<!--<td>[url=/update.html]添加[/url]</td>-->
+                        <script type="text/javascript">
+                            function rollback() {
+                                var str = prompt('请输入要回滚的时间', '比如20171111');
+                                if (str) {
+                                    Url = '/itemdata_rollback?job_name={{ d.items_name }}&datetime='+str
+                                    window.location(Url)
+                                    alert('项目已回滚至：' + '' + str)
+                                }
+                            }
+                        </script>
+						<td>  <a href="javascript:if(confirm('确实要编译吗?')) location='/itemdata_update?job_name={{ d.items_name }}'" id="binupdate" style="background: cyan">编译</a>&nbsp;<a href="javascript:if(confirm('确实更新到站点吗?')) location='/publish?job_name={{ d.items_name }}'" id="binpublish" style="background: cyan">更新</a><br><br>  <a href="javascript:var str = prompt('请输入要回滚的时间', '比如20171111');if (str){Url = '/itemdata_rollback?job_name={{ d.items_name }}&datetime='+str;location=Url;alert('项目已回滚至：' + '' + str)}" id="binrollback" style="background:  greenyellow">回滚</a>&nbsp;<a href="javascript:if(confirm('确实要删除吗?')) location='/delete?id={{ d.id }}'" style="background: #ff9999">删除</a>
+                        </td>
+                {% if build_stat %}
+                        <script type="text/javascript">
+                            stat="{{build_stat}}";
+                            alert(stat)
+                        </script>
+                        {% endif %}
+					</tr>
+					<!--tr class="success">
+						<td>
+
+						</td>
+						<td>
+
+						</td>
+						<td>
+
+						</td>
+						<td>
+
+						</td>
+					</tr>
+					<tr class="error">
+						<td>
+
+						</td>
+						<td>
+
+						</td>
+						<td>
+
+						</td>
+						<td>
+
+						</td>
+					</tr>
+					<tr class="warning">
+						<td>
+
+						</td>
+						<td>
+
+						</td>
+						<td>
+
+						</td>
+						<td>
+
+						</td>
+					</tr>
+					<tr class="info">
+						<td>
+
+						</td>
+						<td>
+
+						</td>
+						<td>
+
+						</td>
+						<td>
+
+						</td>
+					</tr-->
+				</tbody>
+				{% endfor %}
+				{% endif %}
+			</table>
+        </div>
+    </div>
                 </body>
             </div>
         </div>
     </div>
+
     <!--div class="content-panel" style="width: 400px; height: 200px;float: left;margin-left: 16px" >
         <div>
             <p id="box-title">主机总数</p>

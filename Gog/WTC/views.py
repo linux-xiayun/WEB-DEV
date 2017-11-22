@@ -30,33 +30,8 @@ field_name = 'insert_time'
 cursor = connection.cursor()
 
 
-@login_required(login_url='/login')
-def base(request):
-    return render(request, 'base.html')
 
-@login_required(login_url='/login')
-def welcome(request):
-    return render(request, 'welcome.html')
-
-@login_required(login_url='/login')
-def update(request):
-    return render(request, 'index.html')
-
-@login_required(login_url='/login')
-def windows_upd(request):
-    windows_items = Update_items.objects.all().extra(select={'items_system': 'windows'})
-    return render(request, 'update/windows.html', {'windows_items': windows_items})
-
-@login_required(login_url='/login')
-def linux_upd(request):
-    linux_items = Update_items.objects.all().extra(select={'items_system': 'linux'})
-    return render(request, 'update/linux.html', {'linux_items': linux_items})
-
-@login_required(login_url='/login')
-def add_items(request):
-    return render(request, 'update/items.html')
-
-
+#登录，采用django登录验证
 def login(request):
     if request.method == 'GET':
         return render_to_response('login.html',RequestContext(request))
@@ -76,6 +51,7 @@ def login(request):
             error = "用户名或密码错误，请重新输入。"
             return render_to_response("login.html",{'error':error},RequestContext(request))
 
+#登出
 @login_required(login_url='/login')  #只有用户在登录的情况下才能调用该视图，否则将自动重定向至登录页面。
 def logout(request):
     auth.logout(request)
@@ -255,14 +231,16 @@ def assetAction(request):
 #                for id in id_list:
 #                    addHostAsset(request, id)
 #                # return HttpResponseRedirect('/asset/list')
+
+#显示所有项目
 @login_required(login_url='/login')
 @csrf_exempt
 def Items_All(request):
     items_all = Update_items.objects.all()
-    return render(request, 'index.html', {'items_all':items_all})
+    return render(request, 'update.html', {'items_all':items_all})
 
 
-
+#往mysql Update_items表新增项目
 @login_required(login_url='/login')
 @csrf_exempt
 def new_items(request):
@@ -305,7 +283,7 @@ def itemdata_update(request):
     job_name = str(request.GET['job_name'])
     jenkins_update(job_name)
     items_all = Update_items.objects.all()
-    return render(request, 'index.html', {'items_all':items_all,})
+    return render(request, 'update.html', {'items_all':items_all,})
 
 
 #项目回滚
@@ -317,23 +295,57 @@ def itemdata_rollback(request):
     # print(datetime)
     jenkins_rollback(job_name, datetime)
     items_all = Update_items.objects.all()
-    return render(request, 'index.html',{'items_all':items_all})
-
+    return render(request, 'update.html',{'items_all':items_all})
+#jenkins链接
 @login_required(login_url='/login')
 def jenkinsurl(request):
     return HttpResponseRedirect('http://192.168.1.38:8080/')
 
+#调用ansible
 @login_required(login_url='/login')
 def ansible_api(request):
     patten_name = str(request.GET['job_name'])
     popen(patten_name)
     items_all = Update_items.objects.all()
-    return render(request, 'index.html', {'items_all': items_all})
+    return render(request, 'update.html', {'items_all': items_all})
 
+#zabbix链接
 @login_required(login_url='/login')
 def zabbixurl(request):
     return HttpResponseRedirect('http://zabbix.baomihua.com/zabbix/')
 
+#gitlab链接
 @login_required(login_url='/login')
 def gitlaburl(request):
     return HttpResponseRedirect('http://192.168.1.237')
+
+@login_required(login_url='/login')
+def base(request):
+    return render(request, 'base.html')
+
+#欢迎页面
+@login_required(login_url='/login')
+def welcome(request):
+    return render(request, 'welcome.html')
+
+#更新页面
+@login_required(login_url='/login')
+def update(request):
+    return render(request, 'update.html')
+
+#windows更新页面
+@login_required(login_url='/login')
+def windows_upd(request):
+    windows_items = Update_items.objects.filter(items_system='windows')
+    return render(request, 'update/windows.html', {'windows_items': windows_items})
+
+#linux更新页面
+@login_required(login_url='/login')
+def linux_upd(request):
+    linux_items = Update_items.objects.filter(items_system='linux')
+    return render(request, 'update/linux.html', {'linux_items': linux_items})
+
+#项目新增页面
+@login_required(login_url='/login')
+def add_items(request):
+    return render(request, 'update/items.html')

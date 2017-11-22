@@ -5,16 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2843fd6a-e4d7-4a3c-9f54-a593d8e1ec14" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Gog/webstart.sh" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Gog/templates/index.html" afterPath="$PROJECT_DIR$/Gog/templates/update.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gog/Gog/settings.py" afterPath="$PROJECT_DIR$/Gog/Gog/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gog/Gog/urls.py" afterPath="$PROJECT_DIR$/Gog/Gog/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gog/WTC/views.py" afterPath="$PROJECT_DIR$/Gog/WTC/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gog/static/Gruntfile.js" afterPath="$PROJECT_DIR$/Gog/static/Gruntfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gog/static/docs/assets/js/vendor/autoprefixer.js" afterPath="$PROJECT_DIR$/Gog/static/docs/assets/js/vendor/autoprefixer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gog/statics/Gruntfile.js" afterPath="$PROJECT_DIR$/Gog/statics/Gruntfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gog/statics/docs/assets/js/customize.min.js" afterPath="$PROJECT_DIR$/Gog/statics/docs/assets/js/customize.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gog/statics/docs/assets/js/vendor/autoprefixer.js" afterPath="$PROJECT_DIR$/Gog/statics/docs/assets/js/vendor/autoprefixer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gog/templates/base.html" afterPath="$PROJECT_DIR$/Gog/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gog/templates/update/items.html" afterPath="$PROJECT_DIR$/Gog/templates/update/items.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gog/templates/update/linux.html" afterPath="$PROJECT_DIR$/Gog/templates/update/linux.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gog/templates/update/windows.html" afterPath="$PROJECT_DIR$/Gog/templates/update/windows.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gog/templates/welcome.html" afterPath="$PROJECT_DIR$/Gog/templates/welcome.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gog/uwsgi.ini" afterPath="$PROJECT_DIR$/Gog/uwsgi.ini" />
     </list>
     <ignored path="WEB.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,7 +30,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/WEB-DEV$jenkins_api__1_.coverage" NAME="jenkins_api (1) Coverage Results" MODIFIED="1510825541051" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Gog/WTC" />
-    <SUITE FILE_PATH="coverage/WEB-DEV$views.coverage" NAME="views Coverage Results" MODIFIED="1509439076397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Gog/WTC" />
+    <SUITE FILE_PATH="coverage/WEB-DEV$views.coverage" NAME="views Coverage Results" MODIFIED="1511338683676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Gog/WTC" />
     <SUITE FILE_PATH="coverage/WEB-DEV$jenkins_api.coverage" NAME="jenkins_api Coverage Results" MODIFIED="1509961476145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/WEB-DEV$tests.coverage" NAME="tests Coverage Results" MODIFIED="1510282934845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Gog/WTC" />
   </component>
@@ -136,73 +138,127 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gog/WTC/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="54" column="35" lean-forward="true" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
+            <state relative-caret-position="375">
+              <caret line="339" column="43" lean-forward="false" selection-start-line="339" selection-start-column="43" selection-end-line="339" selection-end-column="43" />
               <folding>
-                <element signature="e#2858#2862#0" expanded="false" />
-                <element signature="e#2863#2903#0" expanded="false" />
-                <element signature="e#5689#5693#0" expanded="false" />
-                <element signature="e#5694#5732#0" expanded="false" />
-                <element signature="e#6378#6383#0" expanded="false" />
-                <element signature="e#6384#6418#0" expanded="false" />
-                <element signature="e#7206#7210#0" expanded="false" />
-                <element signature="e#7211#7242#0" expanded="false" />
-                <element signature="e#8782#8787#0" expanded="false" />
-                <element signature="e#8788#8829#0" expanded="false" />
-                <element signature="e#9161#9165#0" expanded="false" />
-                <element signature="e#9166#9198#0" expanded="false" />
+                <element signature="e#14#79#0" expanded="true" />
+                <element signature="e#2013#2017#0" expanded="false" />
+                <element signature="e#2018#2058#0" expanded="false" />
+                <element signature="e#4844#4848#0" expanded="false" />
+                <element signature="e#4849#4887#0" expanded="false" />
+                <element signature="e#5533#5538#0" expanded="false" />
+                <element signature="e#5539#5573#0" expanded="false" />
+                <element signature="e#6361#6365#0" expanded="false" />
+                <element signature="e#6366#6397#0" expanded="false" />
+                <element signature="e#7937#7942#0" expanded="false" />
+                <element signature="e#7943#7984#0" expanded="false" />
+                <element signature="e#8316#8320#0" expanded="false" />
+                <element signature="e#8321#8353#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="items.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Gog/templates/update/items.html">
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Gog/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="119" column="199" lean-forward="false" selection-start-line="119" selection-start-column="199" selection-end-line="119" selection-end-column="199" />
-              <folding>
-                <element signature="n#style#0;n#input#2;n#form#0;n#body#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#3;n#form#0;n#body#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="devops.WTC_update_items" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/919382d4/8928f8c9-dd9e-45d1-9c2f-62c2063040f8/devops.WTC_update_items">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="475">
+              <caret line="25" column="92" lean-forward="false" selection-start-line="25" selection-start-column="84" selection-end-line="25" selection-end-column="92" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="welcome.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="welcome.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gog/templates/welcome.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1882">
-              <caret line="107" column="55" lean-forward="false" selection-start-line="107" selection-start-column="55" selection-end-line="107" selection-end-column="55" />
+            <state relative-caret-position="361">
+              <caret line="46" column="72" lean-forward="true" selection-start-line="46" selection-start-column="72" selection-end-line="46" selection-end-column="72" />
+              <folding>
+                <element signature="e#6819#6825#0" expanded="true" />
+                <element signature="e#6825#6831#0" expanded="true" />
+                <element signature="e#6831#6837#0" expanded="true" />
+                <element signature="e#6837#6843#0" expanded="true" />
+                <element signature="e#6843#6849#0" expanded="true" />
+                <element signature="e#6849#6855#0" expanded="true" />
+                <element signature="e#6912#6918#0" expanded="true" />
+                <element signature="e#6918#6924#0" expanded="true" />
+                <element signature="e#6924#6930#0" expanded="true" />
+                <element signature="e#6930#6936#0" expanded="true" />
+                <element signature="e#6936#6942#0" expanded="true" />
+                <element signature="e#6950#6956#0" expanded="true" />
+                <element signature="e#6956#6962#0" expanded="true" />
+                <element signature="e#6995#7001#0" expanded="true" />
+                <element signature="e#7001#7007#0" expanded="true" />
+                <element signature="e#7007#7013#0" expanded="true" />
+                <element signature="e#7013#7019#0" expanded="true" />
+                <element signature="e#7019#7025#0" expanded="true" />
+                <element signature="e#7033#7039#0" expanded="true" />
+                <element signature="e#7039#7045#0" expanded="true" />
+                <element signature="e#7078#7084#0" expanded="true" />
+                <element signature="e#7084#7090#0" expanded="true" />
+                <element signature="e#7090#7096#0" expanded="true" />
+                <element signature="e#7096#7102#0" expanded="true" />
+                <element signature="e#7102#7108#0" expanded="true" />
+                <element signature="e#7116#7122#0" expanded="true" />
+                <element signature="e#7122#7128#0" expanded="true" />
+                <element signature="e#7161#7167#0" expanded="true" />
+                <element signature="e#7167#7173#0" expanded="true" />
+                <element signature="e#7173#7179#0" expanded="true" />
+                <element signature="e#7179#7185#0" expanded="true" />
+                <element signature="e#7185#7191#0" expanded="true" />
+                <element signature="e#7199#7205#0" expanded="true" />
+                <element signature="e#7205#7211#0" expanded="true" />
+                <element signature="e#7244#7250#0" expanded="true" />
+                <element signature="e#7250#7256#0" expanded="true" />
+                <element signature="e#7256#7262#0" expanded="true" />
+                <element signature="e#7262#7268#0" expanded="true" />
+                <element signature="e#7268#7274#0" expanded="true" />
+                <element signature="e#7282#7288#0" expanded="true" />
+                <element signature="e#7288#7294#0" expanded="true" />
+                <element signature="e#7327#7333#0" expanded="true" />
+                <element signature="e#7333#7339#0" expanded="true" />
+                <element signature="e#7339#7345#0" expanded="true" />
+                <element signature="e#7345#7351#0" expanded="true" />
+                <element signature="e#7351#7357#0" expanded="true" />
+                <element signature="e#7365#7371#0" expanded="true" />
+                <element signature="e#7371#7377#0" expanded="true" />
+                <element signature="e#7410#7416#0" expanded="true" />
+                <element signature="e#7416#7422#0" expanded="true" />
+                <element signature="e#7422#7428#0" expanded="true" />
+                <element signature="e#7428#7434#0" expanded="true" />
+                <element signature="e#7434#7440#0" expanded="true" />
+                <element signature="e#7448#7454#0" expanded="true" />
+                <element signature="e#7454#7460#0" expanded="true" />
+                <element signature="e#7493#7499#0" expanded="true" />
+                <element signature="e#7499#7505#0" expanded="true" />
+                <element signature="e#7505#7511#0" expanded="true" />
+                <element signature="e#7511#7517#0" expanded="true" />
+                <element signature="e#7517#7523#0" expanded="true" />
+                <element signature="e#7531#7537#0" expanded="true" />
+                <element signature="e#7537#7543#0" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#p#0;n#div#0;n#div#0;n#div#0;n#section#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="font-awesome.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Gog/static/css/extend/font-awesome.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="601" column="1" lean-forward="true" selection-start-line="601" selection-start-column="1" selection-end-line="601" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="linux.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gog/templates/update/linux.html">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Gog/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="118" column="0" lean-forward="true" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="e#4778#8472#1" expanded="false" />
-              </folding>
+            <state relative-caret-position="457">
+              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="51" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -217,49 +273,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gog/templates/base.html">
+      <file leaf-file-name="update.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Gog/templates/update.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="533">
-              <caret line="105" column="55" lean-forward="false" selection-start-line="105" selection-start-column="55" selection-end-line="105" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="font-awesome.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gog/static/css/extend/font-awesome.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="605" column="17" lean-forward="false" selection-start-line="605" selection-start-column="1" selection-end-line="605" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gog/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="161" column="331" lean-forward="false" selection-start-line="161" selection-start-column="331" selection-end-line="161" selection-end-column="331" />
+            <state relative-caret-position="342">
+              <caret line="229" column="20" lean-forward="true" selection-start-line="118" selection-start-column="0" selection-end-line="229" selection-end-column="20" />
               <folding>
                 <element signature="e#2470#3053#1" expanded="false" />
-                <element signature="e#6595#7128#0" expanded="false" />
-                <element signature="e#7284#7564#1" expanded="false" />
-                <element signature="e#7570#7864#1" expanded="false" />
-                <element signature="e#7869#8122#1" expanded="false" />
-                <element signature="e#8224#11918#1" expanded="false" />
+                <element signature="e#6597#7130#0" expanded="false" />
+                <element signature="e#7286#7566#1" expanded="false" />
+                <element signature="e#7572#7866#1" expanded="false" />
+                <element signature="e#7871#8124#1" expanded="false" />
+                <element signature="e#8226#11920#1" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gog/Gog/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="111" column="40" lean-forward="true" selection-start-line="111" selection-start-column="40" selection-end-line="111" selection-end-column="40" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -326,7 +352,6 @@
         <option value="$PROJECT_DIR$/Gog/static/js/1.js" />
         <option value="$PROJECT_DIR$/Gog/templates/update/update.html" />
         <option value="$PROJECT_DIR$/Gog/static/css/custom/style.css" />
-        <option value="$PROJECT_DIR$/Gog/templates/update/windows.html" />
         <option value="$PROJECT_DIR$/Gog/static/js/bootstrap.min.js" />
         <option value="$PROJECT_DIR$/Gog/templates/update/items_1.html" />
         <option value="$PROJECT_DIR$/Gog/static/js/items.js" />
@@ -359,11 +384,13 @@
         <option value="$PROJECT_DIR$/Gog/Gog/settings.py" />
         <option value="$PROJECT_DIR$/Gog/uwsgi.ini" />
         <option value="$PROJECT_DIR$/Gog/Gog/urls.py" />
-        <option value="$PROJECT_DIR$/Gog/templates/base.html" />
-        <option value="$PROJECT_DIR$/Gog/templates/welcome.html" />
+        <option value="$PROJECT_DIR$/Gog/templates/update/items.html" />
+        <option value="$PROJECT_DIR$/Gog/templates/update.html" />
         <option value="$PROJECT_DIR$/Gog/templates/update/linux.html" />
         <option value="$PROJECT_DIR$/Gog/WTC/views.py" />
-        <option value="$PROJECT_DIR$/Gog/templates/update/items.html" />
+        <option value="$PROJECT_DIR$/Gog/templates/update/windows.html" />
+        <option value="$PROJECT_DIR$/Gog/templates/base.html" />
+        <option value="$PROJECT_DIR$/Gog/templates/welcome.html" />
       </list>
     </option>
   </component>
@@ -1078,7 +1105,7 @@
       <recent name="C:\Users\Administrator\Desktop\WEB-DEV\Gog\WTC\templates" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.jenkins_api (1)">
+  <component name="RunManager" selected="Python.views">
     <configuration default="false" name="tests" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -1093,24 +1120,6 @@
       <module name="WEB" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Gog/WTC/tests.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="jenkins_api" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="WEB" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\Administrator\Desktop\WEB-DEV\Gog\WTC\jenkins_api.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -1137,6 +1146,24 @@
       <method />
     </configuration>
     <configuration default="false" name="test.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:60116/WEB-DEV/Gog/templates/test.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="views" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Gog/WTC" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="WEB" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Gog/WTC/views.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
@@ -1355,18 +1382,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.tests" />
-      <item index="1" class="java.lang.String" itemvalue="Python.jenkins_api" />
-      <item index="2" class="java.lang.String" itemvalue="Python.jenkins_api (1)" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.test.html" />
+      <item index="1" class="java.lang.String" itemvalue="Python.jenkins_api (1)" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.test.html" />
+      <item index="4" class="java.lang.String" itemvalue="Python.views" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.jenkins_api (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Python.tests" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.test.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
-        <item index="4" class="java.lang.String" itemvalue="Python.jenkins_api" />
+        <item index="0" class="java.lang.String" itemvalue="Python.views" />
+        <item index="1" class="java.lang.String" itemvalue="Python.jenkins_api (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python.tests" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.test.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
   </component>
@@ -1403,7 +1430,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32806325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3260188" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33900106" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.338558" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18495297" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291536" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11227876" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1411,7 +1438,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2675026" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39922482" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39916405" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1457,7 +1484,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1476,19 +1503,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="12" column="56" lean-forward="false" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/919382d4/a9d8adf3-8211-4c15-8c4e-965c5d5be88a/devops_test.WTC_update_items">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1620,22 +1634,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
           <caret line="19" column="51" lean-forward="false" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gog/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="25" column="92" lean-forward="false" selection-start-line="25" selection-start-column="84" selection-end-line="25" selection-end-column="92" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gog/templates/update/windows.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="157" column="12" lean-forward="false" selection-start-line="157" selection-start-column="12" selection-end-line="157" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -1888,21 +1886,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gog/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="161" column="331" lean-forward="false" selection-start-line="161" selection-start-column="331" selection-end-line="161" selection-end-column="331" />
-          <folding>
-            <element signature="e#2470#3053#1" expanded="false" />
-            <element signature="e#6595#7128#0" expanded="false" />
-            <element signature="e#7284#7564#1" expanded="false" />
-            <element signature="e#7570#7864#1" expanded="false" />
-            <element signature="e#7869#8122#1" expanded="false" />
-            <element signature="e#8224#11918#1" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gog/Gog/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1911,46 +1894,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gog/static/css/extend/font-awesome.css">
+    <entry file="file://$PROJECT_DIR$/Gog/templates/update/items.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="605" column="17" lean-forward="false" selection-start-line="605" selection-start-column="1" selection-end-line="605" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gog/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="105" column="55" lean-forward="false" selection-start-line="105" selection-start-column="55" selection-end-line="105" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gog/templates/welcome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1882">
-          <caret line="107" column="55" lean-forward="false" selection-start-line="107" selection-start-column="55" selection-end-line="107" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gog/templates/update/linux.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="118" column="0" lean-forward="true" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+        <state relative-caret-position="23">
+          <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="e#4778#8472#1" expanded="false" />
+            <element signature="n#style#0;n#input#2;n#form#0;n#body#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#3;n#form#0;n#body#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gog/Gog/urls.py">
+    <entry file="file://$PROJECT_DIR$/Gog/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="30" column="39" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="39" />
+        <state relative-caret-position="475">
+          <caret line="25" column="92" lean-forward="false" selection-start-line="25" selection-start-column="84" selection-end-line="25" selection-end-column="92" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gog/templates/update.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="229" column="20" lean-forward="true" selection-start-line="118" selection-start-column="0" selection-end-line="229" selection-end-column="20" />
+          <folding>
+            <element signature="e#2470#3053#1" expanded="false" />
+            <element signature="e#6597#7130#0" expanded="false" />
+            <element signature="e#7286#7566#1" expanded="false" />
+            <element signature="e#7572#7866#1" expanded="false" />
+            <element signature="e#7871#8124#1" expanded="false" />
+            <element signature="e#8226#11920#1" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1967,34 +1941,157 @@
         </state>
       </provider>
     </entry>
+    <entry file="dbDummy://dbtable:/919382d4/a9d8adf3-8211-4c15-8c4e-965c5d5be88a/devops_test.WTC_update_items">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Gog/WTC/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="54" column="35" lean-forward="true" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
+        <state relative-caret-position="375">
+          <caret line="339" column="43" lean-forward="false" selection-start-line="339" selection-start-column="43" selection-end-line="339" selection-end-column="43" />
           <folding>
-            <element signature="e#2858#2862#0" expanded="false" />
-            <element signature="e#2863#2903#0" expanded="false" />
-            <element signature="e#5689#5693#0" expanded="false" />
-            <element signature="e#5694#5732#0" expanded="false" />
-            <element signature="e#6378#6383#0" expanded="false" />
-            <element signature="e#6384#6418#0" expanded="false" />
-            <element signature="e#7206#7210#0" expanded="false" />
-            <element signature="e#7211#7242#0" expanded="false" />
-            <element signature="e#8782#8787#0" expanded="false" />
-            <element signature="e#8788#8829#0" expanded="false" />
-            <element signature="e#9161#9165#0" expanded="false" />
-            <element signature="e#9166#9198#0" expanded="false" />
+            <element signature="e#14#79#0" expanded="true" />
+            <element signature="e#2013#2017#0" expanded="false" />
+            <element signature="e#2018#2058#0" expanded="false" />
+            <element signature="e#4844#4848#0" expanded="false" />
+            <element signature="e#4849#4887#0" expanded="false" />
+            <element signature="e#5533#5538#0" expanded="false" />
+            <element signature="e#5539#5573#0" expanded="false" />
+            <element signature="e#6361#6365#0" expanded="false" />
+            <element signature="e#6366#6397#0" expanded="false" />
+            <element signature="e#7937#7942#0" expanded="false" />
+            <element signature="e#7943#7984#0" expanded="false" />
+            <element signature="e#8316#8320#0" expanded="false" />
+            <element signature="e#8321#8353#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gog/templates/update/items.html">
+    <entry file="file://$PROJECT_DIR$/Gog/templates/update/windows.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="119" column="199" lean-forward="false" selection-start-line="119" selection-start-column="199" selection-end-line="119" selection-end-column="199" />
+        <state relative-caret-position="-1121">
+          <caret line="1" column="31" lean-forward="false" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
           <folding>
-            <element signature="n#style#0;n#input#2;n#form#0;n#body#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#3;n#form#0;n#body#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="e#6343#6869#0" expanded="false" />
+            <element signature="e#7968#11662#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gog/templates/update/linux.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="146" column="52" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="397" selection-end-column="11" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="e#6337#6863#0" expanded="false" />
+            <element signature="e#7962#11656#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gog/Gog/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="30" column="39" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gog/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="51" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gog/static/css/extend/font-awesome.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="601" column="1" lean-forward="true" selection-start-line="601" selection-start-column="1" selection-end-line="601" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gog/templates/welcome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="46" column="72" lean-forward="true" selection-start-line="46" selection-start-column="72" selection-end-line="46" selection-end-column="72" />
+          <folding>
+            <element signature="e#6819#6825#0" expanded="true" />
+            <element signature="e#6825#6831#0" expanded="true" />
+            <element signature="e#6831#6837#0" expanded="true" />
+            <element signature="e#6837#6843#0" expanded="true" />
+            <element signature="e#6843#6849#0" expanded="true" />
+            <element signature="e#6849#6855#0" expanded="true" />
+            <element signature="e#6912#6918#0" expanded="true" />
+            <element signature="e#6918#6924#0" expanded="true" />
+            <element signature="e#6924#6930#0" expanded="true" />
+            <element signature="e#6930#6936#0" expanded="true" />
+            <element signature="e#6936#6942#0" expanded="true" />
+            <element signature="e#6950#6956#0" expanded="true" />
+            <element signature="e#6956#6962#0" expanded="true" />
+            <element signature="e#6995#7001#0" expanded="true" />
+            <element signature="e#7001#7007#0" expanded="true" />
+            <element signature="e#7007#7013#0" expanded="true" />
+            <element signature="e#7013#7019#0" expanded="true" />
+            <element signature="e#7019#7025#0" expanded="true" />
+            <element signature="e#7033#7039#0" expanded="true" />
+            <element signature="e#7039#7045#0" expanded="true" />
+            <element signature="e#7078#7084#0" expanded="true" />
+            <element signature="e#7084#7090#0" expanded="true" />
+            <element signature="e#7090#7096#0" expanded="true" />
+            <element signature="e#7096#7102#0" expanded="true" />
+            <element signature="e#7102#7108#0" expanded="true" />
+            <element signature="e#7116#7122#0" expanded="true" />
+            <element signature="e#7122#7128#0" expanded="true" />
+            <element signature="e#7161#7167#0" expanded="true" />
+            <element signature="e#7167#7173#0" expanded="true" />
+            <element signature="e#7173#7179#0" expanded="true" />
+            <element signature="e#7179#7185#0" expanded="true" />
+            <element signature="e#7185#7191#0" expanded="true" />
+            <element signature="e#7199#7205#0" expanded="true" />
+            <element signature="e#7205#7211#0" expanded="true" />
+            <element signature="e#7244#7250#0" expanded="true" />
+            <element signature="e#7250#7256#0" expanded="true" />
+            <element signature="e#7256#7262#0" expanded="true" />
+            <element signature="e#7262#7268#0" expanded="true" />
+            <element signature="e#7268#7274#0" expanded="true" />
+            <element signature="e#7282#7288#0" expanded="true" />
+            <element signature="e#7288#7294#0" expanded="true" />
+            <element signature="e#7327#7333#0" expanded="true" />
+            <element signature="e#7333#7339#0" expanded="true" />
+            <element signature="e#7339#7345#0" expanded="true" />
+            <element signature="e#7345#7351#0" expanded="true" />
+            <element signature="e#7351#7357#0" expanded="true" />
+            <element signature="e#7365#7371#0" expanded="true" />
+            <element signature="e#7371#7377#0" expanded="true" />
+            <element signature="e#7410#7416#0" expanded="true" />
+            <element signature="e#7416#7422#0" expanded="true" />
+            <element signature="e#7422#7428#0" expanded="true" />
+            <element signature="e#7428#7434#0" expanded="true" />
+            <element signature="e#7434#7440#0" expanded="true" />
+            <element signature="e#7448#7454#0" expanded="true" />
+            <element signature="e#7454#7460#0" expanded="true" />
+            <element signature="e#7493#7499#0" expanded="true" />
+            <element signature="e#7499#7505#0" expanded="true" />
+            <element signature="e#7505#7511#0" expanded="true" />
+            <element signature="e#7511#7517#0" expanded="true" />
+            <element signature="e#7517#7523#0" expanded="true" />
+            <element signature="e#7531#7537#0" expanded="true" />
+            <element signature="e#7537#7543#0" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#p#0;n#div#0;n#div#0;n#div#0;n#section#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
