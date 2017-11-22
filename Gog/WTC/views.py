@@ -38,26 +38,23 @@ def base(request):
 def welcome(request):
     return render(request, 'welcome.html')
 
-@login_required(login_url='/')
+@login_required(login_url='/login')
 def update(request):
-    username = request.session.get('username', '')
-    return render_to_response('index.html',{'username':username})
+    return render(request, 'index.html')
 
-@login_required(login_url='/')
+@login_required(login_url='/login')
 def windows_upd(request):
-    username = request.session.get('username', '')
-    return render_to_response('update/windows.html',{'username':username})
+    windows_items = Update_items.objects.all().extra(select={'items_system': 'windows'})
+    return render(request, 'update/windows.html', {'windows_items': windows_items})
 
-@login_required(login_url='/')
+@login_required(login_url='/login')
 def linux_upd(request):
-    username = request.session.get('username', '')
-    return render_to_response('update/linux.html',{'username':username})
+    linux_items = Update_items.objects.all().extra(select={'items_system': 'linux'})
+    return render(request, 'update/linux.html', {'linux_items': linux_items})
 
-@login_required(login_url='/')
+@login_required(login_url='/login')
 def add_items(request):
-    username = request.session.get('username', '')
-
-    return render_to_response('update/items.html',{'username':username})
+    return render(request, 'update/items.html')
 
 
 def login(request):
@@ -79,15 +76,13 @@ def login(request):
             error = "用户名或密码错误，请重新输入。"
             return render_to_response("login.html",{'error':error},RequestContext(request))
 
-@login_required(login_url='/')  #只有用户在登录的情况下才能调用该视图，否则将自动重定向至登录页面。
+@login_required(login_url='/login')  #只有用户在登录的情况下才能调用该视图，否则将自动重定向至登录页面。
 def logout(request):
     auth.logout(request)
-    #del request.session['username']
     request.session.clear()
-    #response = HttpResponseRedirect('login')
     return render(request, 'login.html')
 
-@login_required()
+@login_required(login_url='/')
 def assetList(request, page):
     pass
 #    all_asset = AssetInfo.objects.all()
@@ -145,6 +140,8 @@ def assetList(request, page):
 #            search_error = "输入不能为空!"
 #            return render_to_response('asset/asset_list.html',{'search_error': search_error}, RequestContext(request))
 #
+
+@login_required(login_url='/')
 def addAsset(request):
     pass
 #    minion_id = request.GET['minion']
@@ -161,7 +158,8 @@ def addAsset(request):
 #        all_asset_info = AssetInfo.objects.all()
 #        return render_to_response('asset/asset_list.html', {'error': error,'all_asset_info': all_asset_info})
 #
-@login_required()
+
+@login_required(login_url='/')
 def editHostAsset(request):
     pass#
 #    # if request.method == "GET":
@@ -181,6 +179,7 @@ def editHostAsset(request):
 #
 #        return HttpResponseRedirect('/asset/list/page=1')
 
+@login_required(login_url='/')
 def addHostAsset(request, tgt):
     pass
 #    sapi = salt_api.HostInfo()
@@ -219,6 +218,7 @@ def addHostAsset(request, tgt):
 #        insert.save()
 #    # return HttpResponseRedirect('/asset/list/page=1')
 
+@login_required(login_url='/')
 def delHostAsset(request, id):
     pass#
 #    if isinstance(id, unicode_literals):
@@ -255,14 +255,15 @@ def assetAction(request):
 #                for id in id_list:
 #                    addHostAsset(request, id)
 #                # return HttpResponseRedirect('/asset/list')
-@login_required(login_url='/')
+@login_required(login_url='/login')
 @csrf_exempt
 def Items_All(request):
     items_all = Update_items.objects.all()
-    username = request.session.get('username', '')
-    return render_to_response('index.html',{'items_all':items_all, 'username':username})
+    return render(request, 'index.html', {'items_all':items_all})
 
-@login_required(login_url='/')
+
+
+@login_required(login_url='/login')
 @csrf_exempt
 def new_items(request):
     if request.method == 'POST':
@@ -283,7 +284,7 @@ def new_items(request):
             messages = "不能为空！"
             return render(request, 'update/items.html', {'messages':messages})
 #删除项目
-@login_required(login_url='/')
+@login_required(login_url='/login')
 @csrf_exempt
 def delete_items(request):
     id = request.GET['id']
@@ -291,7 +292,7 @@ def delete_items(request):
     items.delete()
     return HttpResponseRedirect('/update')
 
-@login_required(login_url='/')
+@login_required(login_url='/login')
 @csrf_exempt
 def query(request):
     id = request.GET['id']
@@ -299,17 +300,16 @@ def query(request):
     return render_to_response('update/q.html',{'items':items})
 
 #项目更新
-@login_required(login_url='/')
+@login_required(login_url='/login')
 def itemdata_update(request):
     job_name = str(request.GET['job_name'])
     jenkins_update(job_name)
     items_all = Update_items.objects.all()
-    username = request.session.get('username', '')
-    return render_to_response('index.html',{'items_all':items_all, 'username':username})
-    # return render_to_response('index.html', {'build_stat': build_stat})
+    return render(request, 'index.html', {'items_all':items_all,})
+
 
 #项目回滚
-@login_required(login_url='/')
+@login_required(login_url='/login')
 def itemdata_rollback(request):
     job_name = "rollback_" + str(request.GET['job_name'])
     # print(job_name)
@@ -317,17 +317,23 @@ def itemdata_rollback(request):
     # print(datetime)
     jenkins_rollback(job_name, datetime)
     items_all = Update_items.objects.all()
-    username = request.session.get('username', '')
-    return render_to_response('index.html',{'items_all':items_all, 'username':username})
+    return render(request, 'index.html',{'items_all':items_all})
 
-@login_required(login_url='/')
+@login_required(login_url='/login')
 def jenkinsurl(request):
     return HttpResponseRedirect('http://192.168.1.38:8080/')
 
-@login_required(login_url='/')
+@login_required(login_url='/login')
 def ansible_api(request):
     patten_name = str(request.GET['job_name'])
     popen(patten_name)
     items_all = Update_items.objects.all()
-    username = request.session.get('username', '')
-    return render_to_response('index.html', {'items_all': items_all, 'username': username})
+    return render(request, 'index.html', {'items_all': items_all})
+
+@login_required(login_url='/login')
+def zabbixurl(request):
+    return HttpResponseRedirect('http://zabbix.baomihua.com/zabbix/')
+
+@login_required(login_url='/login')
+def gitlaburl(request):
+    return HttpResponseRedirect('http://192.168.1.237')

@@ -97,6 +97,18 @@
                           <span>Jenkins</span>
                       </a>
                   </li>
+                  <li class="sub-menu">
+                      <a {% block active_4 %}{% endblock %} href="{% url 'zabbix' %}" target="_blank">
+                          <i class="fa fa-warning"></i>
+                          <span>Zabbix</span>
+                      </a>
+                  </li>
+                  <li class="sub-menu">
+                      <a {% block active_5 %}{% endblock %} href="{% url 'gitlab' %}" target="_blank">
+                          <i class="fa fa-github-square"></i>
+                          <span>GitLab</span>
+                      </a>
+                  </li>
               </ul>
               <!-- sidebar menu end-->
           </div>

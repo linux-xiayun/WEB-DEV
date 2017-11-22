@@ -117,7 +117,7 @@
                 <form action="/new_item/" method="post">{% csrf_token %}
                     <br><b>站点名称</b>&nbsp;&nbsp;&nbsp;&nbsp;<input name="items_name" type="text" id="items_name" style="width: 200px">
                     <br><b>站点地址</b>&nbsp;&nbsp;&nbsp;&nbsp;<input name="items_place" type="text" id="items_place" style="width: 200px">
-                    <br><b>站点系统</b>&nbsp;&nbsp;&nbsp;&nbsp;<input name="items_system" type="text" id="items_system" style="width: 200px">
+                    <br><b>站点系统</b>&nbsp;&nbsp;&nbsp;&nbsp;<input name="items_system" type="radio" id="items_system" style="width: 20px" value="windows">windows <input name="items_system" type="radio" id="items_system" style="width: 20px" value="linux">linux
                     <br><b>源码地址</b>&nbsp;&nbsp;&nbsp;&nbsp;<input name="items_resource" type="text" id="items_resource" style="width: 200px">
                     <div class="checkbox">
 					 <label><input type="checkbox" />Check me out</label>
