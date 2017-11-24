@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/Gog/WTC/tests.py" line="32" />
+    <bookmark url="file://$PROJECT_DIR$/Gog/WTC/tests.py" line="4" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2843fd6a-e4d7-4a3c-9f54-a593d8e1ec14" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Gog/templates/admin.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Gog/templates/zabbix.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gog/Gog/urls.py" afterPath="$PROJECT_DIR$/Gog/Gog/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gog/WTC/admin.py" afterPath="$PROJECT_DIR$/Gog/WTC/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gog/WTC/views.py" afterPath="$PROJECT_DIR$/Gog/WTC/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gog/templates/base.html" afterPath="$PROJECT_DIR$/Gog/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gog/templates/update/windows.html" afterPath="$PROJECT_DIR$/Gog/templates/update/windows.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gog/WTC/tests.py" afterPath="$PROJECT_DIR$/Gog/WTC/tests.py" />
     </list>
     <ignored path="WEB.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -165,7 +158,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gog/WTC/admin.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-204">
@@ -173,6 +166,16 @@
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tests.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Gog/WTC/tests.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -308,16 +311,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="q.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gog/templates/update/q.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="590">
-              <caret line="120" column="56" lean-forward="false" selection-start-line="120" selection-start-column="56" selection-end-line="120" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -401,7 +394,6 @@
         <option value="$PROJECT_DIR$/Gog/Gog/__init__.py" />
         <option value="$PROJECT_DIR$/Gog/WTC/__init__.py" />
         <option value="$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/django/contrib/admin/templates/admin/base_site.html" />
-        <option value="$PROJECT_DIR$/Gog/WTC/tests.py" />
         <option value="$PROJECT_DIR$/Gog/Gog/uwsgi.ini" />
         <option value="$PROJECT_DIR$/Gog/templates/login.html" />
         <option value="$PROJECT_DIR$/Gog/templates/index.html" />
@@ -422,6 +414,7 @@
         <option value="$PROJECT_DIR$/Gog/Gog/urls.py" />
         <option value="$PROJECT_DIR$/Gog/WTC/views.py" />
         <option value="$PROJECT_DIR$/Gog/WTC/admin.py" />
+        <option value="$PROJECT_DIR$/Gog/WTC/tests.py" />
       </list>
     </option>
   </component>
@@ -1048,16 +1041,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gog/WTC/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="893">
-          <caret line="47" column="18" lean-forward="false" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
-          <folding>
-            <element signature="e#72#83#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/919382d4/a9d8adf3-8211-4c15-8c4e-965c5d5be88a/devops_test.django_session">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1566,6 +1549,14 @@
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gog/WTC/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
