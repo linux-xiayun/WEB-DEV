@@ -232,6 +232,7 @@ def assetAction(request):
 #                    addHostAsset(request, id)
 #                # return HttpResponseRedirect('/asset/list')
 
+
 #显示所有项目
 @login_required(login_url='/login')
 @csrf_exempt
@@ -351,7 +352,7 @@ def add_items(request):
     return render(request, 'update/items.html')
 
 @login_required(login_url='/login')
-def testzabbix(request):
+def zabbixurl(request):
     return render(request, 'zabbix.html')
 
 @login_required(login_url='/login')

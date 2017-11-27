@@ -42,9 +42,9 @@ urlpatterns = [
     url(r'^favicon.ico$',RedirectView.as_view(url=r'static/img/favicon.ico')),
     url(r'^jenkins/$', views.jenkinsurl, name='jenkins'),
     url(r'^publish$', views.ansible_api, name='publish'),
-    url(r'^zabbix/$', views.zabbixurl, name='zabbix'),
+    #url(r'^zabbix/$', views.zabbixurl, name='zabbix'),
     url(r'^gitlab/$', views.gitlaburl, name='gitlab'),
-    url(r'^test_zabbix/$', views.testzabbix),
+    url(r'^zabbix/$', views.zabbixurl, name='zabbix'),
     url(r'^test_admin/$', views.testadmin),
 
 ]

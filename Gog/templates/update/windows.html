@@ -149,16 +149,6 @@
 						<td>{{ d.items_resource }}</td>
 						<!--<td>[url=/delete?id={{ d.id }}]删除[/url]  [url=/update.html]添加[/url]  [url=/showid?id={{ d.id }}]修改[/url] </td>-->
 						<!--<td>[url=/update.html]添加[/url]</td>-->
-                        <script type="text/javascript">
-                            function rollback() {
-                                var str = prompt('请输入要回滚的时间', '比如20171111');
-                                if (str) {
-                                    Url = '/itemdata_rollback?job_name={{ d.items_name }}&datetime='+str
-                                    window.location(Url)
-                                    alert('项目已回滚至：' + '' + str)
-                                }
-                            }
-                        </script>
 						<td>  <a href="javascript:if(confirm('确实要编译吗?')) location='/itemdata_update?job_name={{ d.items_name }}'" id="binupdate" style="background: cyan">编译</a>&nbsp;<a href="javascript:if(confirm('确实更新到站点吗?')) location='/publish?job_name={{ d.items_name }}'" id="binpublish" style="background: cyan">更新</a><br><br>  <a href="javascript:var str = prompt('请输入要回滚的时间', '比如20171111');if (str){Url = '/itemdata_rollback?job_name={{ d.items_name }}&datetime='+str;location=Url;alert('项目已回滚至：' + '' + str)}" id="binrollback" style="background:  greenyellow">回滚</a>&nbsp;<a href="javascript:if(confirm('确实要删除吗?')) location='/delete?id={{ d.id }}'" style="background: #ff9999">删除</a>
                         </td>
                 {% if build_stat %}
