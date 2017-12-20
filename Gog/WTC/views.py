@@ -12,7 +12,8 @@ from django.db.models import Q
 from django.db import connection
 from django.views.decorators.csrf import csrf_exempt,csrf_protect
 from django.template.context_processors import csrf
-#import salt_api #,ssh_paramiko
+import qrcode
+from django.utils.six import BytesIO
 import json
 import re
 import math
@@ -358,3 +359,14 @@ def zabbixurl(request):
 @login_required(login_url='/login')
 def testadmin(request):
     return render(request, 'admin.html')
+
+
+def generate_qrcode(request, data):
+    img = qrcode.make(data)
+
+    buf = BytesIO()
+    img.save(buf)
+    image_stream = buf.getvalue()
+
+    response = HttpResponse(image_stream, content_type="image/png")
+    return response

@@ -46,6 +46,7 @@ urlpatterns = [
     url(r'^gitlab/$', views.gitlaburl, name='gitlab'),
     url(r'^zabbix/$', views.zabbixurl, name='zabbix'),
     url(r'^test_admin/$', views.testadmin),
+    url(r'^qrcode/(.+)$', views.generate_qrcode, name='qrcode'),
 
 ]
 
